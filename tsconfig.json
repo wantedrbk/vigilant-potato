@@ -11,5 +11,10 @@
     "esModuleInterop": true,
     // allowSyntheticDefaultImports allows us to import default exports from modules with no default export
     "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   }
 }
