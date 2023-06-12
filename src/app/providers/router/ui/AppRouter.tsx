@@ -1,10 +1,8 @@
 import React, {Suspense} from 'react';
 import {Route, Routes} from "react-router-dom";
-import {MainPageAsync} from "pages/MainPage";
-import {AboutPageAsync} from "pages/AboutPage";
 import {routeConfig} from "shared/config/ routeConfig/routeConfig";
 
-export const AppRouter = () => {
+const AppRouter = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -19,3 +17,5 @@ export const AppRouter = () => {
         </Suspense>
     );
 };
+
+export default AppRouter
