@@ -6,7 +6,7 @@ const MainPage = () => {
   
     return (
         <div>
-            {t('Main Page')}
+            {t('Main_page')}
         </div>
     );
 };
