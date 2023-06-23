@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687234722135" clover="3.2.0">
-  <project timestamp="1687234722135" name="All files">
-    <metrics statements="16" coveredstatements="14" conditionals="19" coveredconditionals="11" methods="4" coveredmethods="4" elements="39" coveredelements="29" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
-    <file name="classNames.js" path="/Users/myfiles/Study.web/Main_working_folder/Courses_to_learn/Ulbi_Продвинутый_react/local-ulbi-course/1-part/1/src/shared/lib/classNames/classNames.js">
+<coverage generated="1687328422297" clover="3.2.0">
+  <project timestamp="1687328422297" name="All files">
+    <metrics statements="19" coveredstatements="17" conditionals="19" coveredconditionals="11" methods="5" coveredmethods="5" elements="43" coveredelements="33" complexity="0" loc="19" ncloc="19" packages="2" files="2" classes="2"/>
+    <package name="lib.classNames">
       <metrics statements="16" coveredstatements="14" conditionals="19" coveredconditionals="11" methods="4" coveredmethods="4"/>
-      <line num="2" count="1" type="cond" truecount="2" falsecount="1"/>
-      <line num="3" count="6" type="cond" truecount="2" falsecount="2"/>
-      <line num="4" count="8" type="cond" truecount="3" falsecount="1"/>
-      <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="14" count="3" type="cond" truecount="1" falsecount="1"/>
-      <line num="15" count="3" type="cond" truecount="1" falsecount="1"/>
-      <line num="16" count="3" type="stmt"/>
-      <line num="20" count="7" type="stmt"/>
-      <line num="21" count="7" type="stmt"/>
-      <line num="24" count="3" type="stmt"/>
-      <line num="25" count="3" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-    </file>
+      <file name="classNames.js" path="/Users/myfiles/Study.web/Main_working_folder/Courses_to_learn/Ulbi_Продвинутый_react/local-ulbi-course/1-part/1/src/shared/lib/classNames/classNames.js">
+        <metrics statements="16" coveredstatements="14" conditionals="19" coveredconditionals="11" methods="4" coveredmethods="4"/>
+        <line num="2" count="2" type="cond" truecount="2" falsecount="1"/>
+        <line num="3" count="16" type="cond" truecount="2" falsecount="2"/>
+        <line num="4" count="14" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui.Button">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Button.tsx" path="/Users/myfiles/Study.web/Main_working_folder/Courses_to_learn/Ulbi_Продвинутый_react/local-ulbi-course/1-part/1/src/shared/ui/Button/Button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

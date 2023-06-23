@@ -1,3 +1,4 @@
+
 module.exports = {
     "env": {
         "browser": true,
@@ -21,6 +22,12 @@ module.exports = {
             "parserOptions": {
                 "sourceType": "script"
             }
+        },
+        {
+            files: [ "**/*.test.{ts,tsx}" ] , // or files: [ "**/*.test.{ts,tsx}" ] [ "**/*.(test.ts|test.tsx)" ]
+            rules: {
+                "i18next/no-literal-string": "off"
+            }
         }
     ],
     "parser": "@typescript-eslint/parser",
@@ -41,7 +48,12 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
-        'i18next/no-literal-string': ['error', {markupOnly: true}],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+            },
+        ],
         "max-len": "off",
     }
 }
