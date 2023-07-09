@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 
 
+
 export function buildPlugins({paths, isDev}: BuildOptions ): webpack.WebpackPluginInstance[] {
   
     return [
@@ -26,7 +27,8 @@ export function buildPlugins({paths, isDev}: BuildOptions ): webpack.WebpackPlug
         new webpack.HotModuleReplacementPlugin(),
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
-        })
+        }),
+      
     ]
   
 }
