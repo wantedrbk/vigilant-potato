@@ -25,10 +25,10 @@ jobs:
         run: npm run build:prod
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint:ts
 
       - name: CSS Lint
-        run: npm run lint:css
+        run: npm run lint:scss
 
       - name: Unit tests
         run: npm run test:unit
