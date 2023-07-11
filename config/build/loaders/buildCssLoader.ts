@@ -1,5 +1,4 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import path from "path";
 
 export function buildCssLoader(isDev: boolean) {
     return {
