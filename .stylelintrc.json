@@ -4,8 +4,7 @@
     "indentation": [4],
     "selector-class-pattern": null,
     "no-empty-source": null,
-    "keyword-spacing": "off",
-    "@typescript-eslint/keyword-spacing": "error"
+    "space-after-keywords": null
   }
 }
 
