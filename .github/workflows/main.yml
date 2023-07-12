@@ -13,6 +13,8 @@ jobs:
         node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -37,6 +39,4 @@ jobs:
         with:
             projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
-      - name: chromatic test
-        run: chromatic:CI
 
