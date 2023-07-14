@@ -25,19 +25,23 @@ jobs:
 
       - name: Build Production
         run: npm run build:prod
+        if: always()
 
       - name: Lint
         run: npm run lint:ts
+        if: always()
 
       - name: CSS Lint
         run: npm run lint:scss
+        if: always()
 
       - name: Unit tests
         run: npm run test:unit
+        if: always()
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-            projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+#      - name: Publish to Chromatic
+#        uses: chromaui/action@v1
+#        with:
+#            projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
 
