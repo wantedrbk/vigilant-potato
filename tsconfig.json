@@ -44,6 +44,7 @@
     "./src/**/*.tsx",
   ],
   "files": [
-    "src/app/types/global.d.ts"
+    "src/app/types/global.d.ts",
+    "storybook-static/sb-preview/runtime.js"
   ]
 }

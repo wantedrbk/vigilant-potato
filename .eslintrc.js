@@ -20,10 +20,10 @@ module.exports = {
             "sourceType": "script"
         }
     }, {
-        files: ["**src/**/*.test.{ts,tsx}"],
+        files: ["**src/**/*.{test,stories}.{ts,tsx}"],
         // or files: [ "**/*.test.{ts,tsx}" ] [ "**/*.(test.ts|test.tsx)" ]
         rules: {
-            "i18next/no-literal-string": "off"
+            "i18next/no-literal-string": "off",
         }
     }],
     "parser": "@typescript-eslint/parser",
@@ -31,7 +31,7 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "react", "i18next", "storybook"],
+    "plugins": ["@typescript-eslint", "react", "i18next", "storybook", "react-hooks"],
     "rules": {
         'react/jsx-indent': [2, 4],
         'indent': [2, 4],
@@ -42,14 +42,22 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            "ignoreAttribute": ["data-testid", "to"]
-        }],
+        'i18next/no-literal-string': 'off',
+        //   ['error', {
+        //     markupOnly: true,
+        //     "ignoreAttribute": ["data-testid", "to"]
+        // }],
         "max-len": ['error', {
             ignoreComments: true,
             code: 120
-        }]
+        }],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "i18next/no-literal": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     globals: {
         __IS_DEV__: true
