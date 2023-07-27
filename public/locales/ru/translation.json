@@ -8,5 +8,7 @@
   "Refresh page": "Обновить страницу",
   "throw Error": "дать ошибку",
   "Short Version": "RU",
-  "Sign in": "Войти"
+  "Sign in": "Войти",
+  "increment": "увеличить",
+  "decrement": "убавить"
 }

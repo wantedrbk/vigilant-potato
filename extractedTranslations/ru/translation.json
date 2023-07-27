@@ -11,6 +11,8 @@
   "Sign_in": "Sign_in",
   "There was an unknown error": "There was an unknown error",
   "Toggle": "Toggle",
+  "decrement": "decrement",
+  "increment": "increment",
   "throw Error": "throw Error",
   "Войти": "Войти"
 }
