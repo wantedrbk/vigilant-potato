@@ -10,5 +10,8 @@
   "Short Version": "ENG",
   "Sign in": "Sign in",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "login": "Login",
+  "input username": "Input username",
+  "input password": "Input password"
 }

@@ -13,6 +13,9 @@
   "Toggle": "Toggle",
   "decrement": "decrement",
   "increment": "increment",
+  "input password": "input password",
+  "input username": "input username",
+  "login": "login",
   "throw Error": "throw Error",
   "Войти": "Войти"
 }

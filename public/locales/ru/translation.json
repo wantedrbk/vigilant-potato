@@ -10,5 +10,8 @@
   "Short Version": "RU",
   "Sign in": "Войти",
   "increment": "увеличить",
-  "decrement": "убавить"
+  "decrement": "убавить",
+  "login": "Авторизоваться",
+  "input username": "Введите username",
+  "input password": "Введите пароль"
 }
