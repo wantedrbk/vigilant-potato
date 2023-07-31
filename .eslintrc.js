@@ -37,14 +37,14 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint', 'react', 'i18next', 'storybook', 'react-hooks'],
 	rules: {
-		// 'react/jsx-indent': [2, 4],
-		// 'indent': [2, 4],
 		'react/jsx-filename-extension': [
 			2,
 			{
 				extensions: ['.js', '.jsx', '.tsx']
 			}
 		],
+		indent: 'off',
+		// 'prettier/prettier': ['error', {singleQuote: true}],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
 		'no-unused-vars': 'off',
