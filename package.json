@@ -18,6 +18,9 @@
 		"test:ui": "npx loki test",
 		"test:ui:ok": "npx loki approve",
 		"test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+		"test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+		"test:ui:json": "node scripts/generate-visual-json-report.js",
+		"test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
 		"storybook": "storybook dev -p 6006 -c ./config/storybook",
 		"build-storybook": "storybook build -c ./config/storybook",
 		"prepare": "husky install"
@@ -35,14 +38,15 @@
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
+		"@nx/react": "^16.6.0",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
-		"@storybook/addon-essentials": "^7.1.1",
-		"@storybook/addon-interactions": "^7.1.1",
-		"@storybook/addon-links": "^7.1.1",
+		"@storybook/addon-essentials": "^7.2.1",
+		"@storybook/addon-interactions": "^7.2.1",
+		"@storybook/addon-links": "^7.2.1",
 		"@storybook/addon-styling": "^1.3.5",
-		"@storybook/blocks": "^7.1.1",
-		"@storybook/react": "^7.1.1",
-		"@storybook/react-webpack5": "^7.1.1",
+		"@storybook/blocks": "^7.2.1",
+		"@storybook/react": "^7.2.1",
+		"@storybook/react-webpack5": "^7.2.1",
 		"@storybook/testing-library": "^0.2.0",
 		"@svgr/webpack": "^6.2.1",
 		"@testing-library/jest-dom": "^5.16.2",
@@ -75,13 +79,16 @@
 		"json-server": "^0.17.3",
 		"loki": "^0.32.0",
 		"mini-css-extract-plugin": "^2.5.3",
+		"nx": "16.6.0",
+		"nx-cloud": "latest",
 		"postcss-loader": "^7.3.1",
 		"prettier": "3.0.0",
 		"react-router-dom": "^6.2.1",
+		"reg-cli": "^0.17.7",
 		"regenerator-runtime": "^0.13.9",
 		"sass": "^1.63.6",
 		"sass-loader": "^12.6.0",
-		"storybook": "^7.1.1",
+		"storybook": "^7.2.1",
 		"style-loader": "^3.3.1",
 		"stylelint": "^14.5.3",
 		"stylelint-config-standard-scss": "^3.0.0",
@@ -95,6 +102,7 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.8.0",
+		"axios": "^1.4.0",
 		"i": "^0.3.7",
 		"i18next": "^21.6.11",
 		"i18next-browser-languagedetector": "^6.1.3",
@@ -117,6 +125,25 @@
 			"chrome.iphone7": {
 				"target": "chrome.app",
 				"preset": "iPhone 7"
+			}
+		}
+	},
+	"nx": {
+		"targets": {
+			"build:prod": {
+				"outputs": [
+					"{projectRoot}/build"
+				]
+			},
+			"build:dev": {
+				"outputs": [
+					"{projectRoot}/build"
+				]
+			},
+			"build-storybook": {
+				"outputs": [
+					"{projectRoot}/storybook-static"
+				]
 			}
 		}
 	}
