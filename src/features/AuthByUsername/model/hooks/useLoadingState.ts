@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux'
-import {getLoginState} from '../selectors/getLoginState/getLoginState'
+import {getLoginLoading} from '../../model/selectors/getLoginLoading/getLoginLoading'
 
 export function useLoadingState(): boolean {
-	const {loading} = useSelector(getLoginState)
+	const loading = useSelector(getLoginLoading)
 	return loading === 'pending'
 }
