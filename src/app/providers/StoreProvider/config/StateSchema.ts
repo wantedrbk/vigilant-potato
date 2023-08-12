@@ -12,7 +12,6 @@ import {
 export interface StateSchema {
 	counter: CounterScheme
 	user: UserSchema
-
 	// Async reducers
 	loginForm?: LoginSchema
 }

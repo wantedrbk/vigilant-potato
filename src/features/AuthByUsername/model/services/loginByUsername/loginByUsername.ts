@@ -8,28 +8,21 @@ interface LoginByUsername {
 	password: string
 }
 
-export const loginByUsername = createAsyncThunk<
-	User,
-	LoginByUsername,
-	{rejectValue: string}
->('login/fetchByIdStatus', async (AuthData: LoginByUsername, thunkAPI) => {
-	try {
-		const response = await axios.post(
-			'http://localhost:8000/login',
-			AuthData
-		)
-		if (!response.data) {
-			throw new Error('error')
+export const loginByUsername = createAsyncThunk<User, LoginByUsername, {rejectValue: string}>(
+	'login/fetchByIdStatus',
+	async (AuthData: LoginByUsername, thunkAPI) => {
+		try {
+			const response = await axios.post('http://localhost:8000/login', AuthData)
+			if (!response.data) {
+				throw new Error('error')
+			}
+
+			localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
+			thunkAPI.dispatch(userActions.setAuthData(response.data))
+
+			return response.data
+		} catch (error) {
+			return thunkAPI.rejectWithValue('error')
 		}
-
-		localStorage.setItem(
-			USER_LOCALSTORAGE_KEY,
-			JSON.stringify(response.data)
-		)
-		thunkAPI.dispatch(userActions.setAuthData(response.data))
-
-		return response.data
-	} catch (error) {
-		return thunkAPI.rejectWithValue('error')
 	}
-})
+)
