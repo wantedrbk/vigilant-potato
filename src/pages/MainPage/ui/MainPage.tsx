@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input/Input'
 
 const MainPage = () => {
-	const {t} = useTranslation('main')
+	const {t} = useTranslation()
 	const [value, setValue] = useState('')
 
 	const onChange = (value: string) => {
@@ -11,9 +11,9 @@ const MainPage = () => {
 	}
 	return (
 		<div>
-			{t('Main_page')}
+			{t('Main page')}
 			<Input
-				placeholder="Введите текст"
+				placeholder='Введите текст'
 				value={value}
 				onChange={onChange}
 			/>

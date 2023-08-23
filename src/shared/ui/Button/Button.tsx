@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {memo} from 'react'
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
-import {ButtonHTMLAttributes, FC} from 'react'
+import {ButtonHTMLAttributes} from 'react'
 
 export enum ThemeButton {
 	CLEAR = 'clear',
@@ -25,9 +25,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	disabled?: boolean
 }
 
-export const Button: FC<ButtonProps> = (props) => {
-	const {className, children, theme, square, size, disabled, ...otherProps} =
-		props
+export const Button = memo((props: ButtonProps) => {
+	const {className, children, theme, square, size, disabled, ...otherProps} = props
 
 	const mods: Record<string, boolean> = {
 		[cls[theme]]: true,
@@ -44,4 +43,4 @@ export const Button: FC<ButtonProps> = (props) => {
 			{children}
 		</button>
 	)
-}
+})

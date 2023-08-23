@@ -6,5 +6,14 @@
 		{"id": "4", "title": "json-server 4", "author": "typicode"}
 	],
 	"users": [{"id": "1", "username": "admin", "password": "123456"}],
-	"profile": {"name": "typicode"}
+	"profile": {
+		"firstname": "Dmytro",
+		"lastname": "Sanchez",
+		"age": "26",
+		"currency": "usd",
+		"country": "Ukraine",
+		"city": "Mykolaiv",
+		"username": "wantedrbk",
+		"avatar": "https://i.imgur.com/WfBfQPM.png"
+	}
 }
