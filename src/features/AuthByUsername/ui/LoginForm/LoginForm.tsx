@@ -5,6 +5,10 @@ import {Input} from 'shared/ui/Input/Input'
 import cls from './LoginForm.module.scss'
 import {useDispatch, useSelector} from 'react-redux'
 import {memo, useCallback} from 'react'
+import {
+	DynamicModuleLoader,
+	ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {loginActions, loginReducer} from 'features/AuthByUsername/model/slice/loginSlice'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {useLoadingState} from '../../model/hooks/useLoadingState'
@@ -12,7 +16,7 @@ import {Text, TextTheme} from 'shared/ui/Text/Text'
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername'
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword'
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError'
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 
 export interface LoginFormProps {
@@ -57,8 +61,8 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
 
 	return (
 		<DynamicModuleLoader
+			removeAfterUnmount
 			reducers={initialReducers}
-			removeAfterUnmount={true}
 		>
 			<div className={classNames(cls.LoginForm, {}, [className])}>
 				<Text title={t('Login Form')} />
