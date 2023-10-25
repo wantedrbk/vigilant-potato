@@ -1,5 +1,7 @@
 import {Country, Currency} from 'shared/const/common'
 
+type Loading = 'idle' | 'pending' | 'succeeded' | 'failed'
+
 export interface Profile {
 	firstname: string
 	lastname: string
@@ -13,7 +15,8 @@ export interface Profile {
 
 export interface ProfileSchema {
 	data?: Profile
-	isLoading: boolean
-	error?: boolean
+	loading: Loading
+	error?: string | null
 	readonly: boolean
+	currentRequestId?: string
 }

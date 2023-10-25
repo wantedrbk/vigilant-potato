@@ -1,10 +1,9 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { DeepPartial } from 'redux'
-import { getCounterValue } from './getCounterValue'
+import {StateSchema} from 'app/providers/StoreProvider'
+import {getCounterValue} from './getCounterValue'
 
 describe('getCounterValue', () => {
 	it('should return the counter value from the state', () => {
-		const state: DeepPartial<StateSchema> = { counter: { value: 42 } }
+		const state: DeepPartial<StateSchema> = {counter: {value: 42}}
 		const counterValue = getCounterValue(state as StateSchema)
 		expect(counterValue).toEqual(42)
 	})

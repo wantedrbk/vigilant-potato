@@ -1,5 +1,5 @@
 import React, {ReactNode, useCallback, useEffect, useRef, useState} from 'react'
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames, Mods} from 'shared/lib/classNames/classNames'
 import {Portal} from 'shared/ui/Portal/Portal'
 import cls from './Modal.module.scss'
 import {useTheme} from 'app/providers/ThemeProvider'
@@ -19,7 +19,7 @@ export const Modal = (props: ModalProps) => {
 	const {theme} = useTheme()
 	const [isClosing, setIsClosing] = useState(false)
 	const [isMounted, setIsMounted] = useState(false)
-	const timerRef = useRef<ReturnType<typeof setTimeout>>()
+	const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
 	useEffect(() => {
 		if (isOpen) {
@@ -62,7 +62,7 @@ export const Modal = (props: ModalProps) => {
 		}
 	}, [isOpen, onKeyDown])
 
-	const mods: Record<string, boolean> = {
+	const mods: Mods = {
 		[cls.opened]: isOpen,
 		[cls.isCLosing]: isClosing
 	}
