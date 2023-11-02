@@ -4,3 +4,4 @@ my-ssh-key-for-git.pub
 /build
 .idea
 storybook-static
+.DS_Store
