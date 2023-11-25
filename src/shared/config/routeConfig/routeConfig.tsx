@@ -5,10 +5,14 @@ import {MainPage} from 'pages/MainPage'
 import {AboutPage} from 'pages/AboutPage'
 import {ProfilePage} from 'pages/ProfilePage'
 
+type AppRouteProps = RouteProps & {
+	authOnly?: boolean
+}
+
 export enum AppRoutes {
 	MAIN = 'main',
 	ABOUT = 'about',
-	PROFILE_PAGE = 'profile_page',
+	PROFILE = 'profile',
 	//last route
 	NOT_FOUND = 'not_found'
 }
@@ -16,12 +20,12 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.MAIN]: '/',
 	[AppRoutes.ABOUT]: '/about',
-	[AppRoutes.PROFILE_PAGE]: '/profile',
+	[AppRoutes.PROFILE]: '/profile',
 	// if all routes are defined, then the last route will be used for all other routes
 	[AppRoutes.NOT_FOUND]: '*'
 }
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	[AppRoutes.MAIN]: {
 		path: RoutePath.main,
 		element: <MainPage />
@@ -30,9 +34,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
 		path: RoutePath.about,
 		element: <AboutPage />
 	},
-	[AppRoutes.PROFILE_PAGE]: {
-		path: RoutePath.profile_page,
-		element: <ProfilePage />
+	[AppRoutes.PROFILE]: {
+		path: RoutePath.profile,
+		element: <ProfilePage />,
+		authOnly: true
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: RoutePath.not_found,

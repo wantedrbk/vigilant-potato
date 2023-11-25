@@ -2,5 +2,17 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your Name": "Your Name",
-  "Your Surname": "Your Surname"
+  "Your Surname": "Your Surname",
+  "Error": "Error",
+  "something get wrong , try to reload page": "something get wrong , try to reload page",
+  "Your Age": "Your Age",
+  "Your Country": "Your Country",
+  "Your Currency": "Your Currency",
+  "Your City": "Your City",
+  "Your Username": "Your Username",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "Your avatar link": "Your avatar link",
+  "avatar": "avatar",
+  "Not found": "Not found"
 }

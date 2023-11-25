@@ -2,5 +2,17 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "Your Name": "Ваше имя",
-  "Your Surname": "Вавша Фамилия"
+  "Your Surname": "Вавша Фамилия",
+  "Error": "Ошибка",
+  "something get wrong , try to reload page": "что-то пошло не так , обновите страницу",
+  "Your Age": "Your Age",
+  "Your Country": "Your Country",
+  "Your Currency": "Your Currency",
+  "Your City": "Your City",
+  "Your Username": "Your Username",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "Your avatar link": "Your avatar link",
+  "avatar": "avatar",
+  "Not found": "Not found"
 }
