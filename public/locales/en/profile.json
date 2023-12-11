@@ -14,5 +14,10 @@
   "Cancel": "Cancel",
   "Your avatar link": "Your avatar link",
   "avatar": "avatar",
-  "Not found": "Not found"
+  "Not found": "Not found",
+  "Серверная ошибка при сохранении": "Server error on save",
+  "Некорректный регион": "Incorrect region",
+  "Данные не указаны": "Data not provided",
+  "Имя и фамилия обязательны": "First name and surname are required",
+  "Некорректный возраст": "Incorrect age"
 }

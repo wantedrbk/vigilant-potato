@@ -18,7 +18,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
 			// const response = await thunkApi .extra.api()
 
-			console.log(response)
 			if (!response.data) {
 				throw new Error()
 			}

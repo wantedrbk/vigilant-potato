@@ -1,15 +1,15 @@
-import {ChangeEvent, useCallback, useEffect, useState} from 'react'
+import {useCallback, useEffect} from 'react'
 import {
 	DynamicModuleLoader,
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
 	fetchProfileData,
-	getProfileData,
 	getProfileError,
 	getProfileForm,
 	getProfileLoading,
 	getProfileReadOnly,
+	getProfileValidateErrors,
 	profileActions,
 	ProfileCard,
 	profileReducer
@@ -18,9 +18,12 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {classNames} from 'shared/lib/classNames/classNames'
 import ProfilePageHeader from 'entities/Profile/ui/ProfileHeader/ProfilePageHeader'
-import {useThrottle} from 'shared/lib/hooks/useThrottle'
 import {Currency} from 'entities/Currency/model/types/currency'
 import {Country} from 'entities/Country/model/types/country'
+import {Text, TextAlign} from 'shared/ui/Text/Text'
+import {TextTheme} from 'shared/ui/Text/Text'
+import {ValidateProfileError} from 'entities/Profile'
+import {useTranslation} from 'react-i18next'
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -31,37 +34,26 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({className}: ProfilePageProps) => {
+	const {t} = useTranslation('profile')
 	const dispatch = useAppDispatch()
 	const form = useSelector(getProfileForm)
 	const loading = useSelector(getProfileLoading)
 	const error = useSelector(getProfileError)
 	const readonly = useSelector(getProfileReadOnly)
+	const validateErrors = useSelector(getProfileValidateErrors)
 
+	const validateErrorTranslates = {
+		[ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+		[ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+		[ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+		[ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+		[ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст')
+	}
 	useEffect(() => {
-		dispatch(fetchProfileData())
+		if (__PROJECT__ !== 'storybook') {
+			dispatch(fetchProfileData())
+		}
 	}, [dispatch])
-
-	// const throttledUpdateFirstName = useThrottle({
-	// 	callback: (value?: string) => {
-	// 		dispatch(profileActions.updateProfile({firstname: value || ''}))
-	// 	},
-	// 	delay: 2000
-	// })
-	// const throttledUpdateLastName = useThrottle({
-	// 	callback: (value?: string) => {
-	// 		dispatch(profileActions.updateProfile({lastname: value || ''}))
-	// 	},
-	// 	delay: 2000
-	// })
-	// const handleFirstNameChange = (value: string) => {
-	// 	setFirstName(value)
-	// 	throttledUpdateFirstName(value)
-	// }
-	//
-	// const handleLastNameChange = (value: string) => {
-	// 	setLastName(value)
-	// 	throttledUpdateLastName(value)
-	// }
 
 	const updateFirstName = useCallback(
 		(value?: string) => {
@@ -84,21 +76,9 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 		[dispatch]
 	)
 
-	const updateAvatar = useCallback(
-		(value?: string) => {
-			dispatch(profileActions.updateProfile({avatar: value || ''}))
-		},
-		[dispatch]
-	)
-
 	const updateAge = useCallback(
 		(value?: number) => {
-			const age = Number(value || 0)
-			if (!isNaN(age) && age >= 0 && age <= 100) {
-				dispatch(profileActions.updateProfile({age: age}))
-			} else {
-				// Handle invalid input here, e.g., show an error message
-			}
+			dispatch(profileActions.updateProfile({age: Number(value || 0)}))
 		},
 		[dispatch]
 	)
@@ -123,6 +103,13 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 		[dispatch]
 	)
 
+	const updateAvatar = useCallback(
+		(value?: string) => {
+			dispatch(profileActions.updateProfile({avatar: value || ''}))
+		},
+		[dispatch]
+	)
+
 	return (
 		<DynamicModuleLoader
 			reducers={reducers}
@@ -130,6 +117,15 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 		>
 			<div className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
+				{validateErrors?.length &&
+					validateErrors.map((err) => (
+						<Text
+							key={err}
+							theme={TextTheme.ERROR}
+							text={validateErrorTranslates[err]}
+							align={TextAlign.CENTER}
+						/>
+					))}
 				<ProfileCard
 					loading={loading}
 					error={error}

@@ -20,6 +20,7 @@ export const profileSlice = createSlice({
 		cancelEdit: (state) => {
 			state.readonly = true
 			state.form = state.data
+			state.validateErrors = undefined
 		},
 		updateProfile: (state, action: PayloadAction<Profile>) => {
 			state.form = {
@@ -58,24 +59,21 @@ export const profileSlice = createSlice({
 				}
 			})
 			.addCase(updateProfileData.pending, (state) => {
-				if (state.loading === 'idle') {
-					state.error = undefined
-					state.loading = 'pending'
-					// state.currentRequestId = action.meta.requestId
-				}
+				state.validateErrors = undefined
+				state.loading = 'pending'
+				// state.currentRequestId = action.meta.requestId
 			})
 			.addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
 				state.loading = 'succeeded'
 				state.data = action.payload
 				state.form = action.payload
+				state.readonly = true
+				state.validateErrors = undefined
 			})
 			.addCase(updateProfileData.rejected, (state, action) => {
-				// const {requestId} = action.meta
-				if (state.loading === 'pending') {
-					state.loading = 'idle'
-					state.error = action.payload
-					// state.currentRequestId = undefined
-				}
+				state.loading = 'idle'
+				state.validateErrors = action.payload
+				// state.currentRequestId = undefined
 			})
 	}
 })

@@ -1,5 +1,5 @@
 import {LoginModal} from 'features/AuthByUsername'
-import {memo, useCallback, useEffect, useState} from 'react'
+import {memo, useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {classNames} from 'shared/lib/classNames/classNames'
 import {Button, ThemeButton} from 'shared/ui/Button/Button'
@@ -7,8 +7,6 @@ import cls from './Navbar.module.scss'
 import {getUserAuthData} from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
 import {useDispatch, useSelector} from 'react-redux'
 import {userActions} from 'entities/User'
-import {updateProfileData} from 'entities/Profile'
-import {forceReRender} from '@storybook/react'
 
 interface NavBarProps {
 	className?: string

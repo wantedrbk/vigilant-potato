@@ -3,6 +3,14 @@ import {Country} from 'entities/Country/model/types/country'
 
 type Loading = 'idle' | 'pending' | 'succeeded' | 'failed'
 
+export enum ValidateProfileError {
+	INCORRECT_USER_DATA = 'INCORRECT USER DATA',
+	INCORRECT_AGE = 'INCORRECT AGE',
+	INCORRECT_COUNTRY = 'INCORRECT COUNTRY',
+	NO_DATA = 'NO DATA',
+	SERVER_ERROR = 'SERVER ERROR'
+}
+
 export interface Profile {
 	firstname?: string
 	lastname?: string
@@ -21,4 +29,5 @@ export interface ProfileSchema {
 	error?: string
 	readonly: boolean
 	currentRequestId?: string
+	validateErrors?: ValidateProfileError[]
 }

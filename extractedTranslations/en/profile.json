@@ -1,0 +1,23 @@
+{
+  "Cancel": "",
+  "Edit": "",
+  "Error": "",
+  "Not found": "Not found",
+  "Profile": "",
+  "Save": "",
+  "Your Age": "",
+  "Your City": "",
+  "Your Country": "",
+  "Your Currency": "",
+  "Your Name": "",
+  "Your Surname": "",
+  "Your Username": "",
+  "Your avatar link": "",
+  "avatar": "",
+  "something get wrong , try to reload page": "",
+  "Данные не указаны": "Данные не указаны",
+  "Имя и фамилия обязательны": "Имя и фамилия обязательны",
+  "Некорректный возраст": "Некорректный возраст",
+  "Некорректный регион": "Некорректный регион",
+  "Серверная ошибка при сохранении": "Серверная ошибка при сохранении"
+}

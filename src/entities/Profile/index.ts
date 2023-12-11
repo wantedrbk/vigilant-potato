@@ -1,6 +1,4 @@
-import {getProfileData} from 'entities/Profile/model/selectors/getProfileData/getProfileData'
-
-export {ProfileSchema, Profile} from './model/types/profile'
+export {ProfileSchema, Profile, ValidateProfileError} from './model/types/profile'
 
 export {profileActions, profileReducer} from './model/slice/profileSlice'
 
@@ -13,3 +11,5 @@ export {getProfileLoading} from './model/selectors/getProfileLoading/getProfileL
 export {getProfileError} from './model/selectors/getProfileError/getProfileError'
 export {getProfileReadOnly} from 'entities/Profile/model/selectors/getProfileReadOnly/getProfileReadOnly'
 export {getProfileForm} from 'entities/Profile/model/selectors/getProfileForm/getProfileForm'
+// eslint-disable-next-line max-len
+export {getProfileValidateErrors} from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'

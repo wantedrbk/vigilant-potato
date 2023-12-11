@@ -13,21 +13,12 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo((props: InputProps) => {
-	const {
-		className,
-		value,
-		onChange,
-		type = 'text',
-		placeholder,
-		autofocus,
-		readOnly,
-		...otherProps
-	} = props
+	const {value, onChange, type = 'text', placeholder, autofocus, readOnly, ...otherProps} = props
 
 	const ref = useRef<HTMLInputElement>(null)
 	const [isFocused, setIsFocused] = useState(false)
 	const [caretPosition, setCaretPosition] = useState(0)
-
+	// const [error, setError] = useState<string | null>(null)
 	const isCaretVisible = isFocused && !readOnly
 
 	useEffect(() => {
@@ -37,7 +28,7 @@ export const Input = memo((props: InputProps) => {
 		}
 	}, [autofocus])
 
-	const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		onChange?.(event.target.value)
 		setCaretPosition(event.target.selectionStart ?? 0)
 	}
@@ -48,7 +39,7 @@ export const Input = memo((props: InputProps) => {
 	const onFocus = () => {
 		setIsFocused(true)
 	}
-	const onSelect = (event: any) => {
+	const onSelect = (event: ChangeEvent<HTMLInputElement>) => {
 		setCaretPosition(event.target.selectionStart ?? 0)
 	}
 
@@ -58,8 +49,8 @@ export const Input = memo((props: InputProps) => {
 	return (
 		<div className={classNames(cls.InputWrapper, mods)}>
 			{placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
-			{/*<div className={classNames('', {[cls.caretWrapper]: !readOnly})}>*/}
-			<div className={cls.caretWrapper}>
+			<div className={classNames('', {[cls.caretWrapper]: !readOnly})}>
+				{/*<div className={cls.caretWrapper}>*/}
 				<input
 					ref={ref}
 					type={type}

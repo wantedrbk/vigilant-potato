@@ -6,9 +6,7 @@ import {Input} from 'shared/ui/Input/Input'
 import {Profile} from 'entities/Profile'
 import {Loading} from 'features/AuthByUsername/model/types/loginSchema'
 import {Loader} from 'shared/ui/Loader/Loader'
-import {ChangeEvent, useEffect} from 'react'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {Select} from 'shared/ui/Select/Select'
 import {Currency, CurrencySelect} from 'entities/Currency'
 import {Country, CountrySelect} from 'entities/Country'
 
@@ -46,6 +44,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		readonly
 	} = props
 	const {t} = useTranslation('profile')
+
 	if (loading === 'pending') {
 		return (
 			<div className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
@@ -73,15 +72,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
 	return (
 		<div className={classNames(cls.ProfileCard, mods, [className])}>
 			<div className={cls.data}>
-				<div className={cls.avatarWrapper}>
-					{data?.avatar && (
-						<Avatar
-							src={data?.avatar}
-							alt={t('Not found')}
-							size={150}
-						/>
-					)}
-				</div>
+				{data?.avatar && (
+					<div className={cls.avatarWrapper}>
+						<Avatar src={data?.avatar} />
+					</div>
+				)}
 				<Input
 					id='avatar'
 					value={data?.avatar}

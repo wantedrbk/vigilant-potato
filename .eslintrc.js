@@ -70,10 +70,14 @@ module.exports = {
 		'react-hooks/exhaustive-deps': 'error',
 		'no-param-reassign': 'off',
 		'react/display-name': 'off',
-		'no-undef': 'off'
+		'no-undef': 'off',
+		'@typescript-eslint/no-non-null-assertion': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off'
 	},
 	globals: {
 		__IS_DEV__: true,
-		__API__: true
+		__API__: true,
+		__PROJECT__: true
 	}
 }
