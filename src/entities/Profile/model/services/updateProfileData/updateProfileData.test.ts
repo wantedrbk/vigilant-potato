@@ -15,7 +15,7 @@ const data = {
 	avatar: 'https://i.imgur.com/WfBfQPM.png'
 }
 
-describe('Test updateProfileData fulfilled', () => {
+describe('TestPage updateProfileData fulfilled', () => {
 	it('Success', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {

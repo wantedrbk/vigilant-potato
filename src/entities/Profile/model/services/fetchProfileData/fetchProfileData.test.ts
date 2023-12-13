@@ -12,7 +12,7 @@ const data = {
 	avatar: 'https://i.imgur.com/WfBfQPM.png'
 }
 
-describe('Test fetchProfileData', () => {
+describe('TestPage fetchProfileData', () => {
 	it('Success', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData)
 		thunk.api.get.mockResolvedValueOnce({data: data})
