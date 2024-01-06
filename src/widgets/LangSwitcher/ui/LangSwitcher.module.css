@@ -1,0 +1,18 @@
+.LangSwitcher {
+  color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.LangSwitcher.active {
+  color: #fff;
+}
+.LangSwitcher:hover {
+  color: #fff;
+}
+.LangSwitcher .flag {
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=LangSwitcher.module.css.map */

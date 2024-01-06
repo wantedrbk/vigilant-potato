@@ -7,6 +7,9 @@ import {ProfileSchema} from 'entities/Profile'
 import {AxiosInstance} from 'axios'
 import {To} from 'react-router-dom'
 import {NavigateOptions} from 'react-router'
+import {ArticleSchema} from 'entities/Article'
+import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage/models/types/ArticleDetailsCommentsSchema'
+import {AddCommentSchema} from 'features/addNewComment'
 
 export interface StateSchema {
 	counter: CounterScheme
@@ -14,6 +17,9 @@ export interface StateSchema {
 	// Async reducers
 	loginForm?: LoginSchema
 	profile?: ProfileSchema
+	articleDetails?: ArticleSchema
+	articleDetailsComments?: ArticleDetailsCommentsSchema
+	addCommentForm?: AddCommentSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

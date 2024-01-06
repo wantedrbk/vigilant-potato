@@ -21,21 +21,339 @@
       "author": "typicode"
     }
   ],
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Dmytddd",
+      "lastname": "Kostiuk",
+      "age": 512123,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Mykolaiv",
+      "username": "typicoded",
+      "avatar": "https://random.imagecdn.app/500/500",
+      "position": "junior Frontend Developer"
+    },
+    {
+      "id": "2",
+      "firstname": "sdf",
+      "lastname": "Kostsdfsiuk",
+      "age": 512123,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Mykolaiv",
+      "username": "typicoddd",
+      "avatar": "https://random.imagecdn.app/500/500",
+      "position": "junior Frontend Developer"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "A Winning Strategy to Building Innovation Dream Teams",
+      "subtitle": "json-server subtitle",
+      "img": "https://random.imagecdn.app/500/500",
+      "author": "typicode",
+      "views": 310,
+      "createdAt": "25.12.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "content": "// response resolver\nconst postsResolver = ({ request, params, cookies }) => {\n  return HttpResponse.json([\n    {\n      title:\n        \"Что такое генераторы статических сайтов и почему Astro — лучший фреймворк для разработки лендингов\",\n      url: \"https://habr.com/ru/articles/779428/\",\n      author: \"@AlexGriss\",\n    },\n    {\n      title: \"Как использовать html-элемент <dialog>?\",\n      url: \"https://habr.com/ru/articles/778542/\",\n      author: \"@AlexGriss\",\n    },\n  ]);\n};"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "Первый параметр в request handler называется predicate (далее предикат) и отражает правила, по которым проверяется URL запроса. Предикат может быть как обычной строкой, так и регулярным выражением. Запрос будет обработан функцией-резолвером, переданной в параметре resolver, только если URL запроса совпадёт с правилом, заданным в предикате. В нашем случае предикатом является строка с относительным URL api/posts. Теперь при вызове любого GET-запроса на данный URL из клиентского приложения с работающим Mock Service Worker запустится обработчик вызова postsHandler."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CARD",
+          "username": "wantedrbk",
+          "fullname": "Dmytro Kostiuk",
+          "position": "junior Frontend Developer"
+        },
+        {
+          "id": "5",
+          "type": "IMAGE",
+          "link": "https://random.imagecdn.app/500/350",
+          "title": "Image title"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Title",
+      "subtitle": "sssssuuuubbtitle",
+      "img": "https://random.imagecdn.app/250/250",
+      "author": "typicode",
+      "views": 310,
+      "createdAt": "25.12.2023",
+      "type": [
+        "CRYPTO"
+      ],
+      "blocks": []
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "nice 1comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "bad 2comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "avarage 3comment",
+      "articleId": "2",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "text": "best 4comment",
+      "articleId": "2",
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "text": "1231231",
+      "userId": "1",
+      "id": "DcDCzuk"
+    },
+    {
+      "articleId": "1",
+      "text": "BAAD ",
+      "userId": "1",
+      "id": "L4MtTEN"
+    },
+    {
+      "articleId": "2",
+      "text": "dadddddd",
+      "userId": "1",
+      "id": "yac-VM7"
+    },
+    {
+      "articleId": "1",
+      "text": "123",
+      "userId": "2",
+      "id": "3ds9j50"
+    },
+    {
+      "articleId": "1",
+      "text": "adsasda",
+      "userId": "2",
+      "id": "L8LTmLL"
+    },
+    {
+      "articleId": "1",
+      "text": "I think its pretty nice article",
+      "userId": "2",
+      "id": "2Hf_sJ_"
+    },
+    {
+      "articleId": "1",
+      "text": "Nice comment",
+      "userId": "2",
+      "id": "FpvL5tr"
+    },
+    {
+      "articleId": "1",
+      "text": "gsdfgdsfg",
+      "userId": "2",
+      "id": "2-ja2eT"
+    },
+    {
+      "articleId": "1",
+      "text": "afsdfafadsfasf",
+      "userId": "2",
+      "id": "pcM9hCW"
+    },
+    {
+      "articleId": "1",
+      "text": "asdfadsfasfasf",
+      "userId": "1",
+      "id": "Yjgia3L"
+    },
+    {
+      "articleId": "1",
+      "text": "fasdfasf",
+      "userId": "1",
+      "id": "eJlghEk"
+    },
+    {
+      "articleId": "1",
+      "text": "asfdasf",
+      "userId": "1",
+      "id": "mSOkOje"
+    },
+    {
+      "articleId": "1",
+      "text": "aaaaa",
+      "userId": "1",
+      "id": "noTkbha"
+    },
+    {
+      "articleId": "1",
+      "text": "dafadsfaafdfafdafadfasfasfafasdfa",
+      "userId": "1",
+      "id": "1CLFkzo"
+    },
+    {
+      "articleId": "1",
+      "text": "dasfsa",
+      "userId": "1",
+      "id": "bVO_6cv"
+    },
+    {
+      "articleId": "1",
+      "text": "11111",
+      "userId": "1",
+      "id": "vPBpt8k"
+    },
+    {
+      "articleId": "1",
+      "text": "222222222222222",
+      "userId": "1",
+      "id": "SowGsau"
+    },
+    {
+      "articleId": "1",
+      "text": "asdfasfafasfa",
+      "userId": "1",
+      "id": "P77YSas"
+    },
+    {
+      "articleId": "1",
+      "text": "33333",
+      "userId": "1",
+      "id": "q6_gG8m"
+    },
+    {
+      "articleId": "1",
+      "text": "131231",
+      "userId": "1",
+      "id": "aIz3pjI"
+    },
+    {
+      "articleId": "1",
+      "text": "fafdasf",
+      "userId": "1",
+      "id": "sneMDg1"
+    },
+    {
+      "articleId": "1",
+      "text": "kfkfkfkfkfkfkfkffkfkfkfkfkfkf",
+      "userId": "1",
+      "id": "m9pU3Dp"
+    },
+    {
+      "articleId": "1",
+      "text": "1",
+      "userId": "1",
+      "id": "0VpX6g-"
+    },
+    {
+      "articleId": "1",
+      "text": "fadfa",
+      "userId": "1",
+      "id": "G9E_-ae"
+    },
+    {
+      "articleId": "1",
+      "text": "asdfdafas",
+      "userId": "1",
+      "id": "oRc8pWW"
+    },
+    {
+      "articleId": "1",
+      "text": "sdfsdfs",
+      "userId": "1",
+      "id": "0xL1XeS"
+    },
+    {
+      "articleId": "1",
+      "text": "23223",
+      "userId": "1",
+      "id": "gfUV5J0"
+    },
+    {
+      "articleId": "1",
+      "text": "12313131",
+      "userId": "1",
+      "id": "HcmRmC6"
+    },
+    {
+      "articleId": "1",
+      "text": "sdf",
+      "userId": "1",
+      "id": "fUcirRS"
+    },
+    {
+      "articleId": "1",
+      "text": "123",
+      "userId": "1",
+      "id": "3HsaLWC"
+    },
+    {
+      "articleId": "1",
+      "text": "12",
+      "userId": "1",
+      "id": "HJUl7OU"
+    },
+    {
+      "articleId": "1",
+      "text": "dfsfds",
+      "userId": "1",
+      "id": "kraUemp"
+    },
+    {
+      "articleId": "1",
+      "text": "123",
+      "userId": "1",
+      "id": "XCJudel"
+    },
+    {
+      "articleId": "1",
+      "text": "123",
+      "userId": "1",
+      "id": "0ZPIsxT"
+    }
+  ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123456"
+      "password": "12",
+      "role": "ADMIN",
+      "avatar": "https://random.imagecdn.app/500/500"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "22",
+      "role": "USER",
+      "avatar": "https://random.imagecdn.app/500/500"
     }
-  ],
-  "profile": {
-    "firstname": "Dmytro",
-    "lastname": "Kostiuk",
-    "age": 512123,
-    "currency": "UAH",
-    "country": "Ukraine",
-    "city": "Mykolaiv",
-    "username": "wantedrbk",
-    "avatar": "https://i.imgur.com/U96U7fk.png"
-  }
+  ]
 }

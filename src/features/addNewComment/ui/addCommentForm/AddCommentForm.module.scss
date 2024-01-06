@@ -1,0 +1,40 @@
+.AddCommentForm {
+  margin: 5px;
+}
+
+.closed {
+  display: none;
+
+}
+
+.addCommentButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitCommentButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.cancelButton {
+  margin-top: 1px ;
+}
+
+.commentForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+}
+
+.inputFormComment{
+  width: 100%;
+}
+
+.labelForm {
+  flex-grow: 1; /* This will make the input element expand to fill the available space */
+  max-width: calc(100% - 90px);
+}

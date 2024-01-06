@@ -25,7 +25,7 @@ describe('TestPage updateProfileData fulfilled', () => {
 		const formData = getProfileForm(thunk.getState())
 		thunk.api.put.mockResolvedValueOnce({data: formData})
 
-		const result = await thunk.callThunk()
+		const result = await thunk.callThunk('1')
 
 		expect(thunk.api.put).toHaveBeenCalled()
 		expect(result.meta.requestStatus).toEqual('fulfilled')
@@ -39,7 +39,7 @@ describe('TestPage updateProfileData fulfilled', () => {
 			}
 		})
 		thunk.api.put.mockReturnValue(Promise.resolve({status: 403}))
-		const result = await thunk.callThunk()
+		const result = await thunk.callThunk('1')
 
 		expect(result.meta.requestStatus).toBe('rejected')
 		expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR])
@@ -51,7 +51,7 @@ describe('TestPage updateProfileData fulfilled', () => {
 				form: {...data, lastname: ''}
 			}
 		})
-		const result = await thunk.callThunk()
+		const result = await thunk.callThunk('1')
 
 		expect(result.meta.requestStatus).toBe('rejected')
 		expect(result.payload).toEqual([ValidateProfileError.INCORRECT_USER_DATA])

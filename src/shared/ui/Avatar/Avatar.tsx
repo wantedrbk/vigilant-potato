@@ -7,16 +7,20 @@ interface AvatarProps {
 	src?: string
 	size?: number
 	alt?: string
+	minSize?:number
+	maxSize?:number
 }
 
 export const Avatar = (props: AvatarProps) => {
-	const {className, size, alt = 'Avatar', src} = props
+	const {className, size, alt = 'Avatar', src, minSize, maxSize} = props
 	const mods: Mods = {}
 	console.log(src)
 	const styles = useMemo<CSSProperties>(
 		() => ({
-			width: size || 100,
-			height: size || 100
+			minWidth: minSize || 100,
+			maxWidth: maxSize || 200,
+			width: size,
+			height: 'auto' || 100
 		}),
 		[size]
 	)
