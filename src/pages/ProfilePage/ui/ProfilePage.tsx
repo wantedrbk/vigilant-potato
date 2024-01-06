@@ -4,7 +4,7 @@ import {
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
-	fetchProfileData,
+	fetchProfileData, getProfileData,
 	getProfileError,
 	getProfileForm,
 	getProfileLoading,
@@ -26,6 +26,7 @@ import {ValidateProfileError} from 'entities/Profile'
 import {useTranslation} from 'react-i18next'
 import {useParams} from 'react-router-dom'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
+import { getUserAuthData } from 'entities/User'
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -43,7 +44,11 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 	const error = useSelector(getProfileError)
 	const readonly = useSelector(getProfileReadOnly)
 	const validateErrors = useSelector(getProfileValidateErrors)
+	const authUser = useSelector(getUserAuthData)
+	const profileData = useSelector(getProfileData)
 	const {id} = useParams<{id: string}>()
+	
+	const ableToSeeOrEdit = authUser?.id === profileData?.id
 	
 	const validateErrorTranslates = {
 		[ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -118,7 +123,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 			reducers={reducers}
 			removeAfterUnmount
 		>
-			<div className={classNames('', {}, [className])}>
+			{profileData ? ableToSeeOrEdit ?
+				<div className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
 				{validateErrors?.length &&
 					validateErrors.map((err) => (
@@ -143,7 +149,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 					onChangeCurrency={updateCurrency}
 					readonly={readonly}
 				/>
-			</div>
+			</div> : <div>Permission denied</div> : <div>Loading..</div>
+			}
 		</DynamicModuleLoader>
 	)
 }

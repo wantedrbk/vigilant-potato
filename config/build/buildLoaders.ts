@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import * as webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import {buildCssLoader} from "./loaders/buildCssLoader";
 import {buildBabelLoader} from './loaders/buildBabelLoader'
@@ -33,10 +33,10 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   
     return [
         cssLoader,
-        svgLoader,
         babelLoader,
         typescriptLoader,
-        fileLoader
+        fileLoader,
+        svgLoader,
     ]
   
 }

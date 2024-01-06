@@ -18,11 +18,8 @@ const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 	const {t} = useTranslation('profile')
 	const readOnly = useSelector(getProfileReadOnly)
 	const dispatch = useAppDispatch()
-	const authData = useSelector(getUserAuthData)
-	const profileData = useSelector(getProfileData)
 	const { id } = useParams<{id: string}>()
 	
-	const ableToEdit = authData?.id === profileData?.id
 	
 	const onEdit = useCallback(() => {
 		dispatch(profileActions.setReadOnly(false))
@@ -40,7 +37,7 @@ const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 	return (
 		<div className={classNames(cls.ProfilePageHeader, {}, [className])}>
 			<Text title={t('Profile')} />
-			{ableToEdit && (
+
 				<div className={cls.btnsWrapper}>
 					{readOnly ? (
 						<Button
@@ -70,7 +67,7 @@ const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 							</Button>
 						</div>
 					)}
-				</div>)}
+				</div>
 		</div>
 	)
 }
