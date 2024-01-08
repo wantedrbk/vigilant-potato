@@ -1,6 +1,14 @@
 // import { Profile } from "entities/Profile";
 
+import { User } from "entities/User"
+
 // export type ArticleProfile = Pick<Profile, 'username' | 'firstname' | 'lastname' >;
+
+
+export enum ArticleViewType {
+	LIST = "LIST",
+	GRID = "GRID"
+}
 
 export enum ArticleBlockType {
 	TEXT = 'TEXT',
@@ -12,7 +20,9 @@ export enum ArticleBlockType {
 
 export enum ArticleType {
 	IT = 'IT',
-	CRYPTO = 'SPORT',
+	SPORT = 'SPORT',
+	BUSINESS = 'BUSINESS',
+	ART = 'ART',
 	NEWS = 'NEWS',
 	OTHER = 'OTHER'
 }
@@ -52,13 +62,13 @@ export type ArticlesBlockAll =
 	| ArticleBlockCard
 
 export interface Article {
-	id: string
-	title: string
-	subtitle: string
-	img: string
-	author: string
-	views: number
-	createdAt: string
-	type: ArticleType[]
-	blocks: ArticlesBlockAll[]
+	id: string;
+	title: string;
+	user: User;
+	subtitle: string;
+	img: string;
+	views: number;
+	createdAt: string;
+	type: ArticleType[];
+	blocks: ArticlesBlockAll[];
 }

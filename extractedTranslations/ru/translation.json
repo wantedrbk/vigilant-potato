@@ -1,6 +1,7 @@
 {
   "About page": "About page",
   "Article is not found": "Article is not found",
+  "Articles": "Статьи",
   "Cancel": "Cancel",
   "Edit": "Edit",
   "Error": "Error",
@@ -10,9 +11,8 @@
   "Not found": "Not found",
   "Page_not_found": "Page_not_found",
   "Password is incorrect": "Password is incorrect",
-  "Profile": "Profile",
+  "Profile": "Профиль",
   "Profile page": "Profile page",
-  "Profile_page": "Profile_page",
   "Refresh page": "Refresh page",
   "Save": "Save",
   "Sign": "Sign",
@@ -35,12 +35,21 @@
   "input password": "input password",
   "input username": "input username",
   "login": "login",
+  "no Articles": "no Articles",
   "something get wrong , try to reload page": "something get wrong , try to reload page",
   "throw Error": "throw Error",
   "Войти": "Войти",
   "Данные не указаны": "Данные не указаны",
   "Имя и фамилия обязательны": "Имя и фамилия обязательны",
+  "Назад к списку": "Назад к списку",
   "Некорректный возраст": "Некорректный возраст",
   "Некорректный регион": "Некорректный регион",
-  "Серверная ошибка при сохранении": "Серверная ошибка при сохранении"
+  "Серверная ошибка при сохранении": "Серверная ошибка при сохранении",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  }
 }

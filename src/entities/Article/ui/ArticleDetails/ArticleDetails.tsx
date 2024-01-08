@@ -180,8 +180,8 @@ export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps)
 					</div>
 				</div>
 				
-				<div className={cls.articleCard}>{data?.blocks.map(renderCardBlock)}</div>
-					<div className={cls.articleBlocks}>{data?.blocks.map(renderBlock)}</div>
+				<div className={cls.articleCard}>{renderCardBlock}</div>
+				<div className={cls.articleBlocks}>{data?.blocks.map(renderBlock)}</div>
 			</>
 		)
 	}
