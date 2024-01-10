@@ -11,6 +11,7 @@ interface ArticleListProps {
     view?: ArticleViewType
 	articles: Article[]
 	isLoading?: boolean
+	error?: string | null
 }
 
 const getSkeletons = (view: ArticleViewType) => new Array(view === ArticleViewType.GRID ? 9 : 3)
@@ -19,7 +20,7 @@ const getSkeletons = (view: ArticleViewType) => new Array(view === ArticleViewTy
 		<ArticleListItemSkeleton className={cls.card} key={index} view={view} />
 	));
 
-export const ArticleList = memo(({className, view = ArticleViewType.GRID, articles, isLoading}: ArticleListProps) => {
+export const ArticleList = memo(({className, view = ArticleViewType.GRID, articles, isLoading, error}: ArticleListProps) => {
 	const {t} = useTranslation()
 	
 	console.log(articles)
@@ -32,6 +33,11 @@ export const ArticleList = memo(({className, view = ArticleViewType.GRID, articl
 		);
 	}
 	
+	if (error) {
+		return (
+			<div>No articles</div>
+		)
+	}
     const renderArticle = (article : Article) => (
 		<ArticleListItem key={article.id} article={article} view={view} className={cls.card}/>
 	)

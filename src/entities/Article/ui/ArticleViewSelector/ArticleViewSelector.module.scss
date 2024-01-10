@@ -1,0 +1,14 @@
+
+.ArticleViewSelector {
+  display: flex;
+}
+
+.notSelected {
+  //fill: var(--secondary-color);
+
+  path {
+    //fill: var(--secondary-color);
+    --icon-stroke-color: var(--secondary-color);
+    opacity: 0.4;
+  }
+}

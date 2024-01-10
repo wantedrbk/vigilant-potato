@@ -54,7 +54,6 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "author": "typicode",
       "views": 310,
       "createdAt": "25.12.2023",
       "type": [
@@ -105,6 +104,7 @@
       "author": "typicode",
       "views": 310,
       "createdAt": "25.12.2023",
+      "userId": "2",
       "type": [
         "CRYPTO"
       ],
@@ -129,6 +129,12 @@
       "text": "avarage 3comment",
       "articleId": "2",
       "userId": "1"
+    },
+    {
+      "articleId": "2",
+      "text": "mkllkmkmkmklmk",
+      "userId": "1",
+      "id": "_7O3k27"
     }
   ],
   "users": [

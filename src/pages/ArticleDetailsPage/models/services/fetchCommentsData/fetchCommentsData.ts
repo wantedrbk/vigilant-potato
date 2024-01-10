@@ -1,8 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {ThunkConfig} from 'app/providers/StoreProvider'
-import {Article} from '../../../../../entities/Article/model/types/article'
 import {CommentCardType} from 'entities/Comments'
-import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
 
 export const fetchCommentsData = createAsyncThunk<
 	CommentCardType[],
