@@ -23,15 +23,24 @@ const articlePageSlice = createSlice({
 		error: undefined,
 		view: ArticleViewType.GRID,
 		ids: [],
-		entities: {}
+		entities: {},
+		page: 1,
+		hasMore: true,
+		_inited: false
 	}),
 	reducers: {
 		setView : (state, action: PayloadAction<ArticleViewType>) => {
 			state.view = action.payload
 			localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
 		},
+		setPage: (state, action: PayloadAction<number>) => {
+			state.page = action.payload;
+		},
 		initState: (state) => {
-			state.view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleViewType;
+			const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleViewType;
+			state.view = view
+			state.limit = view === ArticleViewType.LIST ? 4 : 9
+			state._inited = true
 		},
 		
 		// Can pass adapter functions directly as case reducers.  Because we're passing this
@@ -52,7 +61,8 @@ const articlePageSlice = createSlice({
 				fetchAllArticles.fulfilled,
 				(state, action: PayloadAction<Article[]>) => {
 					state.loading = false
-					articleAdapter.setAll(state, action.payload)
+					articleAdapter.addMany(state, action.payload)
+					state.hasMore = action.payload.length > 0
 				}
 			)
 			.addCase(fetchAllArticles.rejected, (state, action) => {

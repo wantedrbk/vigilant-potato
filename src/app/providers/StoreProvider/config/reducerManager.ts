@@ -12,9 +12,9 @@ export function createReducerManager(
 	// An array which is used to delete state keys when reducers are removed
 	let keysToRemove: Array<StateSchemaKey> = []
 
+	
 	return {
 		getReducerMap: () => reducers,
-
 		// The root reducer function exposed by this object
 		// This will be passed to the store
 		reduce: (state: StateSchema, action: AnyAction) => {
@@ -36,10 +36,9 @@ export function createReducerManager(
 			if (!key || reducers[key]) {
 				return
 			}
-
 			// Add the reducer to the reducer mapping
 			reducers[key] = reducer
-
+			
 			// Generate a new combined reducer
 			combinedReducer = combineReducers(reducers)
 		},

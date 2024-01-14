@@ -18,6 +18,7 @@ import {articleDetailsCommentsReducer, getArticleComments} from '../../models/sl
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {RoutePath} from 'shared/config/routeConfig/routeConfig'
 import {Button, ThemeButton} from 'shared/ui/Button/Button'
+import {Page} from 'shared/ui/PageWrapper/Page'
 
 const reducers: ReducersList = {
 	articleDetailsComments: articleDetailsCommentsReducer
@@ -53,9 +54,9 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
 	if (!id) {
 		return (
-			<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 				{t('Article is not found')}
-			</div>
+			</Page>
 		)
 	}
 	return (
@@ -63,7 +64,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 			reducers={reducers}
 			removeAfterUnmount={true}
 		>
-			<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 				<Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
 					{t('Назад к списку')}
 				</Button>
@@ -80,7 +81,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 					error={error}
 					isLoading={isLoading}
 				/>
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	)
 }

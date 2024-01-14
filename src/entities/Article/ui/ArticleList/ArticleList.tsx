@@ -25,14 +25,6 @@ export const ArticleList = memo(({className, view = ArticleViewType.GRID, articl
 	
 	console.log(articles)
 	
-	if (isLoading) {
-		return (
-			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-				{getSkeletons(view)}
-			</div>
-		);
-	}
-	
 	if (error) {
 		return (
 			<div>No articles</div>
@@ -47,6 +39,7 @@ export const ArticleList = memo(({className, view = ArticleViewType.GRID, articl
 			{articles.length > 0
 				? articles.map(renderArticle)
 				: null}
+			{isLoading && getSkeletons(view)}
 		</div>
 	)
 })

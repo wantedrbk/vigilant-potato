@@ -27,6 +27,7 @@ import {useTranslation} from 'react-i18next'
 import {useParams} from 'react-router-dom'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import { getUserAuthData } from 'entities/User'
+import {Page} from 'shared/ui/PageWrapper/Page'
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -123,34 +124,36 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 			reducers={reducers}
 			removeAfterUnmount
 		>
-			{profileData ? ableToSeeOrEdit ?
-				<div className={classNames('', {}, [className])}>
-				<ProfilePageHeader />
-				{validateErrors?.length &&
-					validateErrors.map((err) => (
-						<Text
-							key={err}
-							theme={TextTheme.ERROR}
-							text={validateErrorTranslates[err]}
-							align={TextAlign.CENTER}
-						/>
-					))}
-				<ProfileCard
-					loading={loading}
-					error={error}
-					data={form}
-					onChangeFirstName={updateFirstName}
-					onChangeLastName={updateLastName}
-					onChangeAvatar={updateAvatar}
-					onChangeUsername={updateUsername}
-					onChangeAge={updateAge}
-					onChangeCountry={updateCountry}
-					onChangeCity={updateCity}
-					onChangeCurrency={updateCurrency}
-					readonly={readonly}
-				/>
-			</div> : <div>Permission denied</div> : <div>Loading..</div>
-			}
+			<Page>
+				{profileData ? ableToSeeOrEdit ?
+					<div className={classNames('', {}, [className])}>
+					<ProfilePageHeader />
+					{validateErrors?.length &&
+						validateErrors.map((err) => (
+							<Text
+								key={err}
+								theme={TextTheme.ERROR}
+								text={validateErrorTranslates[err]}
+								align={TextAlign.CENTER}
+							/>
+						))}
+					<ProfileCard
+						loading={loading}
+						error={error}
+						data={form}
+						onChangeFirstName={updateFirstName}
+						onChangeLastName={updateLastName}
+						onChangeAvatar={updateAvatar}
+						onChangeUsername={updateUsername}
+						onChangeAge={updateAge}
+						onChangeCountry={updateCountry}
+						onChangeCity={updateCity}
+						onChangeCurrency={updateCurrency}
+						readonly={readonly}
+					/>
+				</div> : <div>Permission denied</div> : <div>Loading..</div>
+				}
+			</Page>
 		</DynamicModuleLoader>
 	)
 }

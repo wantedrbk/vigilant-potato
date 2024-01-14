@@ -26,3 +26,7 @@ type DeepPartial<T> = T extends object
 			// eslint-disable-next-line no-mixed-spaces-and-tabs
 	  }
 	: T
+
+type OptionalRecord<K extends keyof any, T> = {
+	[P in K]?: T;
+}

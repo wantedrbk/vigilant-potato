@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input/Input'
+import {Page} from 'shared/ui/PageWrapper/Page'
 
 const MainPage = () => {
 	const {t} = useTranslation()
@@ -10,14 +11,14 @@ const MainPage = () => {
 		setValue(value)
 	}
 	return (
-		<div>
+		<Page>
 			{t('Main page')}
 			<Input
 				placeholder='Введите текст'
 				value={value}
 				onChange={onChange}
 			/>
-		</div>
+		</Page>
 	)
 }
 export default MainPage
