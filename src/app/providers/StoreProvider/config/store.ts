@@ -7,6 +7,7 @@ import {NavigateOptions} from 'react-router'
 import {CombinedState, Reducer} from 'redux'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 import {createReducerManager} from './reducerManager'
+import {uiReducer} from 'features/scrollController'
 // ...
 
 export function createReduxStore(
@@ -16,7 +17,8 @@ export function createReduxStore(
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
 		counter: counterReducer,
-		user: userReducer
+		user: userReducer,
+		scrollController: uiReducer
 	}
 
 	const reducerManager = createReducerManager(rootReducers)

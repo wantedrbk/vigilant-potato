@@ -18,7 +18,7 @@ import {articleDetailsCommentsReducer, getArticleComments} from '../../models/sl
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {RoutePath} from 'shared/config/routeConfig/routeConfig'
 import {Button, ThemeButton} from 'shared/ui/Button/Button'
-import {Page} from 'shared/ui/PageWrapper/Page'
+import {Page} from 'widgets/PageWrapper/Page'
 
 const reducers: ReducersList = {
 	articleDetailsComments: articleDetailsCommentsReducer

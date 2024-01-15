@@ -9,7 +9,7 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {getArticleError, getArticleLoading, getArticlesPageView} from '../models/selectors/articleSelectors'
-import {Page} from 'shared/ui/PageWrapper/Page'
+import {Page} from 'widgets/PageWrapper/Page'
 import {fetchNextArticles} from '../models/services/fetchNextArticles'
 import {initArticlesPage} from '../models/services/initArticlesPage'
 

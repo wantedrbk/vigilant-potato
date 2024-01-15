@@ -9,10 +9,12 @@ import {ArticleSchema} from 'entities/Article'
 import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage/models/types/ArticleDetailsCommentsSchema'
 import {AddCommentSchema} from 'features/addNewComment'
 import {ArticlePageSchema} from 'pages/ArticlesPage/models/types/ArticlePageSchema'
+import {scrollControllerSchema} from 'features/scrollController/model/types/scrollControllerSchema'
 
 export interface StateSchema {
 	counter: CounterScheme
 	user: UserSchema
+	scrollController: scrollControllerSchema
 	// Async reducers
 	loginForm?: LoginSchema
 	profile?: ProfileSchema

@@ -27,7 +27,7 @@ import {useTranslation} from 'react-i18next'
 import {useParams} from 'react-router-dom'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import { getUserAuthData } from 'entities/User'
-import {Page} from 'shared/ui/PageWrapper/Page'
+import {Page} from 'widgets/PageWrapper/Page'
 
 const reducers: ReducersList = {
 	profile: profileReducer
