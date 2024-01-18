@@ -10,7 +10,7 @@ export const useThrottle = ({callback, delay}: UseThrottleProps) => {
 	const isThrottled = useRef(false)
 
 	const throttledCallback = useCallback(
-		async (...args: any[]) => {
+		(...args: any[]) => {
 			if (isThrottled.current) {
 				return
 			}

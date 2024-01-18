@@ -5,6 +5,7 @@ import {useTranslation} from 'react-i18next'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import {ArticleListItemSkeleton} from '../../ui/ArticleListItem/ArticleListItemSkeleton'
 import {memo} from 'react'
+import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
 	className?: string;
@@ -23,13 +24,24 @@ const getSkeletons = (view: ArticleViewType) => new Array(view === ArticleViewTy
 export const ArticleList = memo(({className, view = ArticleViewType.GRID, articles, isLoading, error}: ArticleListProps) => {
 	const {t} = useTranslation()
 	
-	console.log(articles)
-	
 	if (error) {
 		return (
 			<div>No articles</div>
 		)
 	}
+	
+	if(!isLoading && !articles.length) {
+		return (
+			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+				<Text text={t('empty articles')}
+				  theme={TextTheme.PRIMARY}
+				  size={TextSize.L}
+				  className={cls.empty}
+				/>
+			</div>
+		)
+	}
+	
     const renderArticle = (article : Article) => (
 		<ArticleListItem key={article.id} article={article} view={view} className={cls.card}/>
 	)

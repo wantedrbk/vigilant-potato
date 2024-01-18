@@ -32,7 +32,7 @@ describe('validateProfileData', () => {
 			firstname: 'John',
 			lastname: 'Doe',
 			username: 'johndoe',
-			age: 4
+			age: '4'
 		}
 		expect(validateProfileData(profile)).toContainEqual(ValidateProfileError.INCORRECT_COUNTRY)
 	})

@@ -1,10 +1,11 @@
 import {createEntityAdapter, createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {CommentCardType} from 'entities/Comments'
 import {StateSchema} from 'app/providers/StoreProvider'
 import {Article, ArticleViewType} from 'entities/Article'
 import {ArticlePageSchema} from 'pages/ArticlesPage/models/types/ArticlePageSchema'
 import {fetchAllArticles} from 'pages/ArticlesPage/models/services/fecthAllArticles'
 import {ARTICLES_VIEW_LOCALSTORAGE_KEY} from 'shared/const/localStorage'
+import {SortOrder} from 'shared/types'
+import {ArticleSortField, ArticleType} from 'entities/Article/model/types/article'
 // eslint-disable-next-line max-len
 
 const articleAdapter = createEntityAdapter({
@@ -25,8 +26,13 @@ const articlePageSlice = createSlice({
 		ids: [],
 		entities: {},
 		page: 1,
+		limit: 9,
 		hasMore: true,
-		_inited: false
+		_inited: false,
+		sort: ArticleSortField.CREATED,
+		order: 'asc',
+		search: '',
+		type: ArticleType.ALL
 	}),
 	reducers: {
 		setView : (state, action: PayloadAction<ArticleViewType>) => {
@@ -36,13 +42,24 @@ const articlePageSlice = createSlice({
 		setPage: (state, action: PayloadAction<number>) => {
 			state.page = action.payload;
 		},
+		setOrder: (state, action: PayloadAction<SortOrder>) => {
+			state.order = action.payload;
+		},
+		setSort: (state, action: PayloadAction<ArticleSortField>) => {
+			state.sort = action.payload;
+		},
+		setSearch: (state, action: PayloadAction<string>) => {
+			state.search = action.payload;
+		},
+		setType: (state, action: PayloadAction<ArticleType>) => {
+			state.type = action.payload;
+		},
 		initState: (state) => {
 			const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleViewType;
 			state.view = view
 			state.limit = view === ArticleViewType.LIST ? 4 : 9
 			state._inited = true
 		},
-		
 		// Can pass adapter functions directly as case reducers.  Because we're passing this
 		// as a value, `createSlice` will auto-generate the `bookAdded` action type / creator
 		// bookAdded: commentsAdapter.addOne,
@@ -53,16 +70,25 @@ const articlePageSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder
-			.addCase(fetchAllArticles.pending, (state) => {
+			.addCase(fetchAllArticles.pending, (state, action) => {
 				state.error = undefined
 				state.loading = true
+				if ( action.meta.arg.replace ) {
+					articleAdapter.removeAll(state)
+				}
 			})
 			.addCase(
 				fetchAllArticles.fulfilled,
-				(state, action: PayloadAction<Article[]>) => {
+				(state, action) => {
 					state.loading = false
-					articleAdapter.addMany(state, action.payload)
-					state.hasMore = action.payload.length > 0
+					state.hasMore = action.payload.length >= state.limit
+					
+					if(action.meta.arg.replace) {
+						articleAdapter.setAll(state, action.payload)
+					} else {
+						articleAdapter.addMany(state, action.payload)
+					}
+					
 				}
 			)
 			.addCase(fetchAllArticles.rejected, (state, action) => {

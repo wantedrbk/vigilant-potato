@@ -22,5 +22,13 @@
   "About page": "About Page",
   "Cancel": "Cancel",
   "Save": "Save",
-  "Articles Page": "Articles Page"
+  "Articles Page": "Articles Page",
+  "all": "All",
+  "it": "IT",
+  "sport": "Sport",
+  "business": "Business",
+  "art": "Art",
+  "news": "News",
+  "other": "Other",
+  "empty articles": "No articles found"
 }

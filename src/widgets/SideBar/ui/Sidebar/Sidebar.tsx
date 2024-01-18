@@ -6,7 +6,7 @@ import {LangSwitcher} from 'widgets/LangSwitcher/ui/LangSwitcher'
 import {Button, ButtonSize, ThemeButton} from 'shared/ui/Button/Button'
 import {SidebarItem} from '../SidebarItem/SidebarItem'
 import {getSideBarItems} from 'widgets/SideBar/model/selector/getSidebarItems'
-import { useSelector } from 'react-redux'
+import {useSelector} from 'react-redux'
 
 interface SidebarProps {
 	className?: string
@@ -45,7 +45,6 @@ export const Sidebar = memo(({className}: SidebarProps) => {
 				size={ButtonSize.L}
 			>
 				{collapsed ? '>' : '<'}
-				{/*{t('Toggle')}*/}
 			</Button>
 			<div className={cls.items}>{itemList}</div>
 			<div className={cls.switchers}>

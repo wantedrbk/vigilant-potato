@@ -7,7 +7,7 @@ import {Currency} from 'entities/Currency'
 const data = {
 	firstname: 'dsfdsfs',
 	lastname: 'jjjj',
-	age: 51,
+	age: '51',
 	currency: Currency.EUR,
 	country: Country.Germany,
 	city: '盐城',

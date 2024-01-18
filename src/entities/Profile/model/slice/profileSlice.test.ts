@@ -30,7 +30,7 @@ describe('profileSlice', () => {
 			username: 'wantedrbk',
 			firstname: 'David',
 			lastname: 'Kostiuk',
-			age: 33,
+			age: '33',
 			country: Country.Spain
 		}
 		const initialStateWithData = {...initialState, form: form}
@@ -44,12 +44,12 @@ describe('profileSlice', () => {
 			username: 'wantedrbk',
 			firstname: 'David',
 			lastname: 'Maaa',
-			age: 33,
+			age: '33',
 			country: Country.Spain
 		}
 		const initialData = {...initialState, form: form}
 
-		const updateProfilePayload: Profile = {username: 'sdfs', age: 54}
+		const updateProfilePayload: Profile = {username: 'sdfs', age: '54'}
 		const action: PayloadAction<Profile> = {
 			type: 'profile/updateProfile',
 			payload: updateProfilePayload
@@ -63,7 +63,7 @@ describe('profileSlice', () => {
 			username: 'wantedrbk',
 			firstname: 'David',
 			lastname: 'Maaa',
-			age: 33,
+			age: '33',
 			country: Country.Spain
 		}
 		const initialData = {...initialState, form: form}
@@ -77,7 +77,7 @@ describe('profileSlice', () => {
 			username: 'wantedrbk',
 			firstname: 'David',
 			lastname: 'Maaa',
-			age: 33,
+			age: '33',
 			country: Country.Spain
 		}
 		const action: PayloadAction<Profile> = {
@@ -112,7 +112,7 @@ describe('profileSlice', () => {
 			username: 'wantedrbk',
 			firstname: 'David',
 			lastname: 'Maaa',
-			age: 33,
+			age: '33',
 			country: Country.Spain
 		}
 		const initialStateWithError = {

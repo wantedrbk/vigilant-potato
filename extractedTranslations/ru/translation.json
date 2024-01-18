@@ -1,4 +1,7 @@
 {
+  "${type": {
+    "toLowerCase()}": "${type.toLowerCase()}"
+  },
   "About page": "About page",
   "Article is not found": "Article is not found",
   "Articles": "Статьи",
@@ -31,6 +34,8 @@
   "Your avatar link": "Your avatar link",
   "avatar": "avatar",
   "decrement": "decrement",
+  "empty": "empty",
+  "empty articles": "empty articles",
   "increment": "increment",
   "input password": "input password",
   "input username": "input username",
@@ -38,18 +43,33 @@
   "no Articles": "no Articles",
   "something get wrong , try to reload page": "something get wrong , try to reload page",
   "throw Error": "throw Error",
+  "Айти": "Айти",
+  "Бизнес": "Бизнес",
   "Войти": "Войти",
+  "Все статьи": "Все статьи",
   "Данные не указаны": "Данные не указаны",
+  "Другое": "Другое",
   "Имя и фамилия обязательны": "Имя и фамилия обязательны",
+  "Искусство": "Искусство",
   "Назад к списку": "Назад к списку",
   "Некорректный возраст": "Некорректный возраст",
   "Некорректный регион": "Некорректный регион",
+  "Новости": "Новости",
+  "Поиск": "Поиск",
   "Серверная ошибка при сохранении": "Серверная ошибка при сохранении",
+  "Сортировать ПО": "Сортировать ПО",
+  "Спорт": "Спорт",
   "Читать далее": {
     "": {
       "": {
         "": ""
       }
     }
-  }
+  },
+  "возрастанию": "возрастанию",
+  "дате создания": "дате создания",
+  "названию": "названию",
+  "по": "по",
+  "просмотрам": "просмотрам",
+  "убыванию": "убыванию"
 }

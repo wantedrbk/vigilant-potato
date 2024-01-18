@@ -3,7 +3,11 @@
 import { User } from "entities/User"
 
 // export type ArticleProfile = Pick<Profile, 'username' | 'firstname' | 'lastname' >;
-
+export enum ArticleSortField {
+	VIEWS = 'views',
+	TITLE = 'title',
+	CREATED = 'createdAt',
+}
 
 export enum ArticleViewType {
 	LIST = "LIST",
@@ -19,6 +23,7 @@ export enum ArticleBlockType {
 }
 
 export enum ArticleType {
+	ALL = 'ALL',
 	IT = 'IT',
 	SPORT = 'SPORT',
 	BUSINESS = 'BUSINESS',

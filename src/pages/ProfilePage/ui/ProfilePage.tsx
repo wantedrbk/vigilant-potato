@@ -86,8 +86,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 	)
 
 	const updateAge = useCallback(
-		(value?: number) => {
-			dispatch(profileActions.updateProfile({age: Number(value || 0)}))
+		(value?: string) => {
+			dispatch(profileActions.updateProfile({age: value || '0'}))
 		},
 		[dispatch]
 	)

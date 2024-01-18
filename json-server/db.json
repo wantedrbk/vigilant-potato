@@ -26,7 +26,7 @@
       "id": "1",
       "firstname": "Dmytdddf",
       "lastname": "Kostiufasdf",
-      "age": 512123,
+      "age": "512123",
       "currency": "EUR",
       "country": "Poland",
       "city": "Mykolaiv",
@@ -38,7 +38,7 @@
       "id": "2",
       "firstname": "sdf",
       "lastname": "Kostsdfsiuk",
-      "age": 512123,
+      "age": "23",
       "currency": "UAH",
       "country": "Ukraine",
       "city": "Mykolaiv",
@@ -94,8 +94,8 @@
       "subtitle": "sssssuuuubbtitle",
       "img": "https://random.imagecdn.app/250/250",
       "author": "typicode",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 210,
+      "createdAt": "25.11.2023",
       "userId": "2",
       "type": [
         "CRYPTO"
@@ -111,7 +111,7 @@
       "views": 310,
       "createdAt": "25.12.2023",
       "type": [
-        "IT"
+        "SPORT"
       ],
       "blocks": [
         {
@@ -130,8 +130,8 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 530,
+      "createdAt": "21.12.2013",
       "type": [
         "IT"
       ],
@@ -141,7 +141,7 @@
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+            "В поле request будет доступна реализация react нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
           ]
         }
       ]
@@ -174,10 +174,10 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 30,
+      "createdAt": "10.01.2024",
       "type": [
-        "IT"
+        "BUSINESS"
       ],
       "blocks": [
         {
@@ -196,10 +196,10 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 110,
+      "createdAt": "25.01.2023",
       "type": [
-        "IT"
+        "NEWS"
       ],
       "blocks": [
         {
@@ -284,7 +284,7 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
+      "views": 1110,
       "createdAt": "25.12.2023",
       "type": [
         "IT"
@@ -306,10 +306,10 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 710,
+      "createdAt": "05.06.2023",
       "type": [
-        "IT"
+        "ART"
       ],
       "blocks": [
         {
@@ -328,10 +328,11 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
+      "views": 432,
       "createdAt": "25.12.2023",
       "type": [
-        "IT"
+        "IT",
+        "BUSINESS"
       ],
       "blocks": [
         {
@@ -438,10 +439,10 @@
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 1150,
+      "createdAt": "25.02.2016",
       "type": [
-        "IT"
+        "OTHER"
       ],
       "blocks": [
         {
@@ -449,7 +450,7 @@
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+            "ethereum В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
           ]
         }
       ]
@@ -500,7 +501,7 @@
     },
     {
       "id": "21",
-      "title": "A Winning Strategy to Building Innovation Dream Teams",
+      "title": "bitcoin A Winning Strategy to Building Innovation Dream Teams",
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
@@ -537,7 +538,7 @@
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+            "swift В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
           ]
         }
       ]
@@ -559,7 +560,7 @@
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+            "go lang В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
           ]
         }
       ]
@@ -581,7 +582,7 @@
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "В поле request будет доступна реализация нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
+            "В поле request будет доступна реализация bitcoin нативного интерфейса Request из Fetch API, так что вы сможете использовать все стандартные методы и свойства соответствующего класса. В поле params будут доступны параметры пути, такие как, к примеру, postId для URL вида api/posts/:postId. Наконец, поле cookies содержит все установленные при запросе куки в виде строковых пар ключ-значение."
           ]
         }
       ]
@@ -610,14 +611,14 @@
     },
     {
       "id": "27",
-      "title": "A Winning Strategy to Building Innovation Dream Teams",
+      "title": "java A Winning Strategy to Building Innovation Dream Teams",
       "subtitle": "json-server subtitle",
       "img": "https://random.imagecdn.app/500/500",
       "userId": "1",
-      "views": 310,
-      "createdAt": "25.12.2023",
+      "views": 777,
+      "createdAt": "25.04.2019",
       "type": [
-        "IT"
+        "ART"
       ],
       "blocks": [
         {
