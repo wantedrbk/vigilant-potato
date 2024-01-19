@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss'
 import {useTranslation} from 'react-i18next'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import {ArticleListItemSkeleton} from '../../ui/ArticleListItem/ArticleListItemSkeleton'
-import {memo} from 'react'
+import {HTMLAttributeAnchorTarget , memo} from 'react'
 import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
@@ -13,6 +13,7 @@ interface ArticleListProps {
 	articles: Article[]
 	isLoading?: boolean
 	error?: string | null
+	target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleViewType) => new Array(view === ArticleViewType.GRID ? 9 : 3)
@@ -21,7 +22,7 @@ const getSkeletons = (view: ArticleViewType) => new Array(view === ArticleViewTy
 		<ArticleListItemSkeleton className={cls.card} key={index} view={view} />
 	));
 
-export const ArticleList = memo(({className, view = ArticleViewType.GRID, articles, isLoading, error}: ArticleListProps) => {
+export const ArticleList = memo(({className, view = ArticleViewType.GRID, articles, isLoading, error, target}: ArticleListProps) => {
 	const {t} = useTranslation()
 	
 	if (error) {
@@ -43,7 +44,7 @@ export const ArticleList = memo(({className, view = ArticleViewType.GRID, articl
 	}
 	
     const renderArticle = (article : Article) => (
-		<ArticleListItem key={article.id} article={article} view={view} className={cls.card}/>
+		<ArticleListItem target={target} key={article.id} article={article} view={view} className={cls.card}/>
 	)
     
 	return (

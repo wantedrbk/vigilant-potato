@@ -10,7 +10,7 @@ import {
 // import {addCommentFormAction} from 'features/addNewComment/model/slice/addCommentFormSlice'
 
 export const addCommentForArticle = createAsyncThunk<CommentCardType, string, ThunkConfig<string>>(
-	'adddCommentForm/sendComment',
+	'articleDetailsPage/addCommentForm',
 	async (text, thunkApi) => {
 		const {extra, dispatch, rejectWithValue, getState} = thunkApi
 		

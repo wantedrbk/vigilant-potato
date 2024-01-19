@@ -58,6 +58,7 @@ export const ArticlePageFilter = ({className}: ArticlePageFilterProps) => {
 
 	const onChangeOrder = useCallback(
 		(order: SortOrder) => {
+			dispatch(articlePageActions.setPage(1))
 			dispatch(articlePageActions.setOrder(order))
 			fetchData()
 		},
@@ -66,6 +67,7 @@ export const ArticlePageFilter = ({className}: ArticlePageFilterProps) => {
 
 	const onChangeSort = useCallback(
 		(sort: ArticleSortField) => {
+			dispatch(articlePageActions.setPage(1))
 			dispatch(articlePageActions.setSort(sort))
 			fetchData()
 		},
@@ -73,6 +75,7 @@ export const ArticlePageFilter = ({className}: ArticlePageFilterProps) => {
 	)
 	const onChangeType = useCallback(
 		(type: ArticleType) => {
+			dispatch(articlePageActions.setPage(1))
 			dispatch(articlePageActions.setType(type))
 			fetchData()
 		},

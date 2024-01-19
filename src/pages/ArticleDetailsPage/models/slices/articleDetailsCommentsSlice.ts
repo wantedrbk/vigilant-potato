@@ -2,17 +2,15 @@ import {createEntityAdapter, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {CommentCardType} from 'entities/Comments'
 import {StateSchema} from 'app/providers/StoreProvider'
 import {ArticleDetailsCommentsSchema} from '../types/ArticleDetailsCommentsSchema'
-import {fetchProfileData, Profile} from 'entities/Profile'
 // eslint-disable-next-line max-len
 import {fetchCommentsData} from 'pages/ArticleDetailsPage/models/services/fetchCommentsData/fetchCommentsData'
-
-const commentsAdapter = createEntityAdapter({
+const commentsAdapter = createEntityAdapter<CommentCardType>({
 	// Assume IDs are stored in a field other than `comment.id`
-	selectId: (comment: CommentCardType) => comment.id
+	selectId: (comment) => comment.id
 })
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-	(state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+	(state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 )
 
 const articleDetailsCommentsSlice = createSlice({
@@ -56,4 +54,3 @@ const articleDetailsCommentsSlice = createSlice({
 
 export const {reducer: articleDetailsCommentsReducer} = articleDetailsCommentsSlice
 export const {actions: articleDetailsCommentsActions} = articleDetailsCommentsSlice
-

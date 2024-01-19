@@ -58,7 +58,7 @@ module.exports = {
 			'error',
 			{
 				ignoreComments: true,
-				code: 120
+				code: 155
 			}
 		],
 		'react/react-in-jsx-scope': 'off',

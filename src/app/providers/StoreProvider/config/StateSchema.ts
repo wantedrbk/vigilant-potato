@@ -6,10 +6,10 @@ import {CombinedState} from 'redux'
 import {ProfileSchema} from 'entities/Profile'
 import {AxiosInstance} from 'axios'
 import {ArticleSchema} from 'entities/Article'
-import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage/models/types/ArticleDetailsCommentsSchema'
 import {AddCommentSchema} from 'features/addNewComment'
-import {ArticlePageSchema} from 'pages/ArticlesPage/models/types/ArticlePageSchema'
-import {scrollControllerSchema} from 'features/scrollController/model/types/scrollControllerSchema'
+import {ArticlePageSchema} from 'pages/ArticlesPage'
+import {scrollControllerSchema} from 'features/scrollController'
+import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage'
 
 export interface StateSchema {
 	counter: CounterScheme
@@ -19,9 +19,9 @@ export interface StateSchema {
 	loginForm?: LoginSchema
 	profile?: ProfileSchema
 	articleDetails?: ArticleSchema
-	articleDetailsComments?: ArticleDetailsCommentsSchema
 	addCommentForm?: AddCommentSchema
 	articlePage?: ArticlePageSchema
+	articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

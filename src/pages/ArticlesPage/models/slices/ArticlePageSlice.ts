@@ -26,7 +26,7 @@ const articlePageSlice = createSlice({
 		ids: [],
 		entities: {},
 		page: 1,
-		limit: 9,
+		limit: 15,
 		hasMore: true,
 		_inited: false,
 		sort: ArticleSortField.CREATED,
@@ -57,7 +57,7 @@ const articlePageSlice = createSlice({
 		initState: (state) => {
 			const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleViewType;
 			state.view = view
-			state.limit = view === ArticleViewType.LIST ? 4 : 9
+			state.limit = view === ArticleViewType.LIST ? 4 : 15
 			state._inited = true
 		},
 		// Can pass adapter functions directly as case reducers.  Because we're passing this
