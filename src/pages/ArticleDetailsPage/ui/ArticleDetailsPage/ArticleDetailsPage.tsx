@@ -28,6 +28,7 @@ import {
 	getArticleRecommendationsError,
 	getArticleRecommendationsLoading
 } from '../../models/selectors/recommendationsSelector'
+import {ArticleDetailsPageHeader} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 const reducers: ReducersList = {
 	articleDetailsPage: articleDetailsPageReducer
@@ -41,10 +42,9 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 	const {t} = useTranslation('article')
 	const {id} = useParams<{id: string}>()
 	const dispatch = useAppDispatch()
-	const error = useSelector(getArticleCommentsError)
 	const comments = useSelector(getArticleComments.selectAll)
 	const isLoading = useSelector(getArticleCommentsLoading)
-	const navigate = useNavigate();
+	const error = useSelector(getArticleCommentsError)
 	const recArticles = useSelector(getArticleRecommendations.selectAll)
 	const recLoading = useSelector(getArticleRecommendationsLoading)
 	const recError = useSelector(getArticleRecommendationsError)
@@ -56,9 +56,6 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 		[dispatch]
 	)
 	
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles);
-	}, [navigate]);
 	
 	useInitialEffect(() => {
 		dispatch(fetchCommentsData(id))
@@ -78,9 +75,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 			removeAfterUnmount={true}
 		>
 			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-				<Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
-					{t('Назад к списку')}
-				</Button>
+				<ArticleDetailsPageHeader />
 				<ArticleDetails articleId={id} />
 				<Text
 					text={'Recommendations'}

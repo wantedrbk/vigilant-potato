@@ -10,6 +10,7 @@ import {AddCommentSchema} from 'features/addNewComment'
 import {ArticlePageSchema} from 'pages/ArticlesPage'
 import {scrollControllerSchema} from 'features/scrollController'
 import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage'
+import {MiniProfilesSchema} from 'entities/Article/model/types/articleMiniProfileSchema'
 
 export interface StateSchema {
 	counter: CounterScheme
@@ -22,6 +23,7 @@ export interface StateSchema {
 	addCommentForm?: AddCommentSchema
 	articlePage?: ArticlePageSchema
 	articleDetailsPage?: ArticleDetailsPageSchema
+	miniProfile?: MiniProfilesSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

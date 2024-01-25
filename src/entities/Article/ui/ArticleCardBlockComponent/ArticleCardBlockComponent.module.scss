@@ -41,7 +41,7 @@
 }
 
 .inputBtn {
-	width: 100%;
+	/* width: 100%; */
 	height: 40px;
 	padding: 10px;
 	margin: 10px 0;
@@ -51,11 +51,11 @@
 }
 
 .authorEmailForm {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+	/* width: 100%; */
+	max-width: 500px;
+	margin: 0 auto;
 }
 
 .emailContainer {
-  flex-direction: column;
+	flex-direction: column;
 }

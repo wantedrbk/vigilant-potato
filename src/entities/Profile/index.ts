@@ -1,4 +1,4 @@
-export {ProfileSchema, Profile, ValidateProfileError} from './model/types/profile'
+export {ProfileSchema, Profile, ValidateProfileError , MiniProfile} from './model/types/profile'
 
 export {profileActions, profileReducer} from './model/slice/profileSlice'
 

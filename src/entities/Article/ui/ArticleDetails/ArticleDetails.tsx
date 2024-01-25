@@ -3,7 +3,10 @@ import cls from './ArticleDetails.module.scss'
 import {fetchArticleData} from '../../model/services/fetchArticleData/fetchArticleData'
 import {
 	getArticleDetailsData,
-	getArticleDetailsError, getArticleDetailsLoading
+	getArticleDetailsError,
+	getArticleDetailsLoading,
+	getArticleMiniProfileLoading,
+	getMiniProfile
 } from '../../model/selectors/getArticleDetailsState'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {memo, useCallback, useEffect} from 'react'
@@ -24,6 +27,12 @@ import {
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice'
+import {ProfileMiniCard} from 'entities/Profile/ui/ProfileMiniCard/ProfileMiniCard'
+import {
+	articleDetailsMiniProfileAction,
+	articleDetailsMiniProfileReducer
+} from 'entities/Article/model/slice/articleDetailsMiniProfileSlice'
+import {fetchMiniProfileDataByArticleId} from 'entities/Article/model/services/fetchProfileDataByArticleId/fetchMiniProfileDataByArticleId'
 
 interface ArticleDetailsProps {
 	className?: string
@@ -31,7 +40,8 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-	articleDetails: articleDetailsReducer
+	articleDetails: articleDetailsReducer,
+	miniProfile: articleDetailsMiniProfileReducer
 }
 
 export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps) => {
@@ -39,23 +49,16 @@ export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps)
 	const data = useSelector(getArticleDetailsData)
 	const loading = useSelector(getArticleDetailsLoading)
 	const error = useSelector(getArticleDetailsError)
+	const miniProfileData = useSelector(getMiniProfile)
+	const miniProfileLoading = useSelector(getArticleMiniProfileLoading)
+	const miniProfileError = useSelector(getArticleDetailsError)
 
 	useEffect(() => {
 		if (__PROJECT__ !== 'storybook') {
 			dispatch(fetchArticleData(articleId))
+			dispatch(fetchMiniProfileDataByArticleId(articleId))
 		}
 	}, [dispatch, articleId])
-	
-	const renderCardBlock = useCallback((block: ArticlesBlockAll) => {
-		if (block.type === ArticleBlockType.CARD) {
-			return (
-				<ArticleCardBlockComponent
-					key={block.id}
-					block={block}
-				/>
-			)
-		} else return null
-	}, [])
 
 	const renderBlock = useCallback((block: ArticlesBlockAll) => {
 		switch (block.type) {
@@ -86,7 +89,7 @@ export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps)
 	}, [])
 
 	let content
-	
+
 	if (loading) {
 		content = (
 			<>
@@ -148,7 +151,7 @@ export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps)
 						className={cls.avatar}
 					/>
 				</div>
-				
+
 				<div className={cls.headerWrapper}>
 					<Text
 						className={cls.title}
@@ -179,13 +182,22 @@ export const ArticleDetails = memo(({className, articleId}: ArticleDetailsProps)
 						/>
 					</div>
 				</div>
-				
-				<div className={cls.articleCard}>{renderCardBlock}</div>
-				<div className={cls.articleBlocks}>{data?.blocks.map(renderBlock)}</div>
+				{miniProfileData && (
+					<ProfileMiniCard
+						className={cls.miniCard}
+						profile={miniProfileData}
+						loading={miniProfileLoading}
+						error={miniProfileError}
+					/>
+				)}
+
+				<div className={cls.articleBlocks}>
+					{data?.blocks.map((block) => renderBlock(block))}
+				</div>
 			</>
 		)
 	}
-	
+
 	return (
 		<DynamicModuleLoader
 			reducers={reducers}

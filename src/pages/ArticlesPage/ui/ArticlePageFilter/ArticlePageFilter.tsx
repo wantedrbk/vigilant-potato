@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticlePageFilter.module.scss'
-import {Card} from 'shared/ui/Card/Card'
+import {Card, CardTheme} from 'shared/ui/Card/Card'
 import {Input} from 'shared/ui/Input/Input'
 import {useTranslation} from 'react-i18next'
 import {ArticleSortSelector} from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector'
@@ -20,6 +20,9 @@ import {useDebounce} from 'shared/lib/hooks/useDebounce'
 import {SortOrder} from 'shared/types'
 import {ArticleSortField, ArticleType} from 'entities/Article/model/types/article'
 import {ArticleTypeSelector} from 'entities/Article'
+import {Button, ButtonSize, ThemeButton} from 'shared/ui/Button/Button'
+import { useNavigate } from 'react-router-dom'
+import {RoutePath} from 'shared/config/routeConfig/routeConfig'
 
 interface ArticlePageFilterProps {
 	className?: string
@@ -83,27 +86,33 @@ export const ArticlePageFilter = ({className}: ArticlePageFilterProps) => {
 	)
 	
 
+	
 	return (
 		<div className={classNames(cls.ArticlePageFilter, {}, [className])}>
 			<div className={cls.sortWrapper}>
-				<ArticleSortSelector
-					sort={sort}
-					order={order}
-					changeSort={onChangeSort}
-					changeOrder={onChangeOrder}
-				/>
-				<ArticleViewSelector
-					view={view}
-					onViewChange={onViewChange}
-				/>
+				<div className={cls.filter}>
+					<ArticleSortSelector
+						sort={sort}
+						order={order}
+						changeSort={onChangeSort}
+						changeOrder={onChangeOrder}
+					/>
+					<ArticleViewSelector
+						view={view}
+						onViewChange={onViewChange}
+					/>
+				</div>
 			</div>
-			<Card className={cls.search}>
-				<Input
-					onChange={onChangeSearch}
-					value={search}
-					placeholder={t('Поиск')}
-				/>
-			</Card>
+			<div>
+				<Card className={cls.search}>
+					<Input
+						onChange={onChangeSearch}
+						value={search}
+						placeholder={t('Поиск')}
+					/>
+				</Card>
+				
+			</div>
 			<ArticleTypeSelector
 				value={type}
 				onChangeType={onChangeType}

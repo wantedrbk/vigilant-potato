@@ -32,3 +32,11 @@ export interface ProfileSchema {
 	currentRequestId?: string
 	validateErrors?: ValidateProfileError[]
 }
+
+export interface MiniProfile {
+	id: string
+	firstname: string
+	lastname: string
+	username: string
+	avatar: string
+}

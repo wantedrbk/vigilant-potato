@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
 import {Article, ArticleViewType} from 'entities/Article'
 import { Card } from 'shared/ui/Card/Card';
-import {memo, HTMLAttributeAnchorTarget} from 'react'
+import {memo, HTMLAttributeAnchorTarget, useCallback} from 'react'
 import {RoutePath} from 'shared/config/routeConfig/routeConfig'
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -13,6 +13,7 @@ import {ArticleTextBlockComponent} from '../../ui/ArticleTextBlockComponent/Arti
 import {Button, ThemeButton} from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next';
 import {AppLink} from 'shared/ui/AppLink/AppLink'
+import { useNavigate } from 'react-router-dom';
 
 
 interface ArticleListItemProps {
@@ -25,8 +26,12 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(({className, article, view, target}: ArticleListItemProps) => {
 	const { t } = useTranslation();
+	const navigate = useNavigate()
 	
-	
+	const onArticle = useCallback(() => {
+		navigate(RoutePath.article_details + article.id);
+	},[])
+ 
 	const types = <Text text={article.type.join(', ')} className={cls.types} />;
 	
 	const views = (
@@ -59,7 +64,7 @@ export const ArticleListItem = memo(({className, article, view, target}: Article
 					)}
 					<div className={cls.footer}>
 						<AppLink target={target} to={RoutePath.article_details + article.id}/>
-						<Button theme={ThemeButton.OUTLINE}>
+						<Button theme={ThemeButton.OUTLINE} onClick={onArticle}>
 							{t('Читать далее...')}
 						</Button>
 						{views}

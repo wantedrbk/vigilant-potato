@@ -5,3 +5,4 @@ export interface ArticleSchema {
 	error?: string | null
 	data?: Article
 }
+

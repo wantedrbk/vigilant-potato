@@ -2,5 +2,5 @@ export {ArticleDetailsPageAsync as ArticleDetailsPage} from './ui/ArticleDetails
 
 export {ArticleDetailsCommentsSchema} from './models/types/ArticleDetailsCommentsSchema'
 export {ArticleDetailsRecommendationsSchema} from './models/types/ArticleDetailsRecommendationsSchema'
-
+export { getCanEditArticle } from './models/selectors/article'
 export { ArticleDetailsPageSchema } from './models/types'

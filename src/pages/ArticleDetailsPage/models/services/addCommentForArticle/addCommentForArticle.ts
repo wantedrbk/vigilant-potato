@@ -22,6 +22,7 @@ export const addCommentForArticle = createAsyncThunk<CommentCardType, string, Th
 		}
 		
 		try {
+			// @ts-ignore
 			const response = await extra.api.post<CommentCardType>('/comments', {
 				articleId: article?.id,
 				text: text,
