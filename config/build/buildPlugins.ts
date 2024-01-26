@@ -1,3 +1,4 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
@@ -24,7 +25,12 @@ export function buildPlugins({paths, isDev, apiUrl, project }: BuildOptions ): w
             __API__: JSON.stringify(apiUrl),
             __PROJECT__:JSON.stringify(project)
         }),
-
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: paths.locales , to: paths.buildLocales },
+            ],
+        }),
+        
     ]
     
     if(isDev) {
