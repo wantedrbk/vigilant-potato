@@ -22,7 +22,6 @@ export const NavBar = memo(({className}: NavBarProps) => {
 	const [isAuthModal, setIsAuthModal] = useState(false)
 	const authData = useSelector(getUserAuthData)
 	const dispatch = useDispatch()
-	
 
 	const onCloseModal = useCallback(() => {
 		setIsAuthModal(false)
@@ -41,13 +40,19 @@ export const NavBar = memo(({className}: NavBarProps) => {
 		return (
 			<header className={classNames(cls.navbar, {}, [className])}>
 				<AppLink to={RoutePath.articles}>
-					<Icon Svg={logo} className={cls.logo}/>
+					<Icon
+						Svg={logo}
+						className={cls.logo}
+					/>
 				</AppLink>
 				<AppLink
 					to={RoutePath.article_create}
 					className={cls.createLink}
 				>
-					<Text title={t('Создать статью')} theme={TextTheme.INVERTED}/>
+					<Text
+						title={t('Создать статью')}
+						theme={TextTheme.INVERTED}
+					/>
 				</AppLink>
 				<Button
 					theme={ThemeButton.CLEARINVERTED}
