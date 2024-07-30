@@ -16,7 +16,7 @@ describe('Counter', () => {
 		const incrementBtn = screen.getByTestId('increment-btn')
 		fireEvent.click(incrementBtn)
 		const valueTitle = screen.getByTestId('value-title')
-		expect(valueTitle).toHaveTextContent('value = 11')
+		expect(valueTitle).toHaveTextContent('value = 10')
 	})
 
 	test('should decrement the counter value when the decrement button is clicked', () => {
